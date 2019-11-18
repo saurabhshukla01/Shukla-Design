@@ -1,0 +1,21 @@
+when user admin super login >(create admin )  admin login > (create reseller ) reseller login > (create clent ) client login
+
+ 
+
+===============================================================================================================
+
+{% extends "admin/change_form.html" %}
+
+{% block extrahead %}
+    <script type="application/javascript">
+        (function($){
+            $(function(){
+                document.body.setAttribute("data-admin-utc-offset","{% now "Z" %}");
+            })
+        })(jQuery)
+    </script>
+    {{ block.super }}
+{% endblock %}
+
+
+===============================================================================================================

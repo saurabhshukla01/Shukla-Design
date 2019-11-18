@@ -1,0 +1,52 @@
+
+<!doctype html>
+<html class="demo">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>select2-bootstrap-theme</title>
+	<link rel="stylesheet" href="https://select2.github.io/select2-bootstrap-theme/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css" />
+	 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.full.js"></script>
+	</head>
+	<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div class="content">
+      <label>Select One</label>
+        <select class="large js-select2">
+          <option>aaaaaaa</option>
+          <option>bbbbbbb</option>
+          <option>ccccccc</option>
+          <option>dddddd</option>
+          <option>eeeeeeee</option>
+          <option>fffffff</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+  
+  $(".js-select2").select2();
+  
+  $(".js-select2-multi").select2();
+
+  $(".large").select2({
+    dropdownCssClass: "big-drop",
+  });
+  
+});
+
+</script>
+
+	</body>
+</html>

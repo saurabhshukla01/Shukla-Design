@@ -1,0 +1,32 @@
+													MYSQL Steps using in python or query also ===>>
+												======================================================
+
+
+mysql -u root -p
+password ==>   Abc@1234
+
+mysql> show databases;    //   database name 
+mysql> use email_verify;  // table name 
+mysql> create table tablename (colname datatype);   // create table
+mysql> insert into student_email (col name) values ( value of col wise);   // column wise insert value in table column
+mysql> select * from student_email;
+
+
+
+======================================================================================================================
+
+					DJproject ====>  (mysql command)
+					--------------------------------
+
+IF you want to mysql >   \q (press-enter).
+mysql -u root -p
+password ==>   Abc@1234
+
+mysql> show databases;    //   database name 
+mysql> use database;
+mysql> show tables;    // table name (verify Whose table created by you ..)   [ex.  appname_module-class-name ]
+mysql> use ;  // table name  [ex.  appname_module-class-name ]
+(*) -- mysql> create table tablename (colname datatype);   // create table
+(*) -- mysql> insert into student_email (col name) values ( value of col wise);   // column wise insert value in table column
+*mysql> select * from myapp_studnet;
+

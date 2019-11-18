@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+      <title>Hey Send</title>
+      <meta content="Admin Dashboard" name="description" />
+      <meta content="Mannatthemes" name="author" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <link rel="shortcut icon" href="http://heysend.sheenz.in/assets/images/favicon.ico">
+      <!-- DataTables -->
+      <link href="http://heysend.sheenz.in/assets/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+      <link href="http://heysend.sheenz.in/assets/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700&display=swap" rel="stylesheet">
+      <!-- Responsive datatable examples -->
+      <script src="http://heysend.sheenz.in/assets/js/jquery.min.js"></script>
+      <link href="http://heysend.sheenz.in/assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+      <link href="http://heysend.sheenz.in/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+      <!-- Multi Select -->
+      <link href="http://heysend.sheenz.in/assets/plugins/multiselect/css/multi-select.css"  rel="stylesheet" type="text/css" />
+      <link href="http://heysend.sheenz.in/assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+      <link href="http://heysend.sheenz.in/assets/css/icons.css" rel="stylesheet" type="text/css">
+      <link href="http://heysend.sheenz.in/assets/css/style.css" rel="stylesheet" type="text/css">
+      <link href="http://heysend.sheenz.in/assets/plugins/bootstrap-sweetalert/sweet-alert.css" rel="stylesheet" type="text/css" />
+      <script src="http://heysend.sheenz.in/assets/plugins/bootstrap-sweetalert/sweet-alert.min.js"></script>
+      <script src="http://heysend.sheenz.in/assets/plugins/multiselect/js/jquery.multi-select.js"></script>
+      <script src="http://heysend.sheenz.in/assets/plugins/select2/js/select2.full.min.js"></script>
+      <script src="http://heysend.sheenz.in/assets/custom.js"></script>
+      <link href="http://heysend.sheenz.in/assets/plugins/animate/animate.css" rel="stylesheet" type="text/css">
+      <link href="http://heysend.sheenz.in/assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+      <script src="http://heysend.sheenz.in/assets/plugins/moment/moment.js"></script>
+      <script src="http://heysend.sheenz.in/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+      <script src="http://heysend.sheenz.in/assets/plugins/parsleyjs/parsley.min.js"></script>
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <sript type="text/javascript">
+        http://heysend.sheenz.in/$(document).ready(function() {
+             $('form').parsley();
+         });
+      </script>
+   </head>
+   <body>
+      <!-- Loader -->
+      <div id="preloader">
+         <div id="status">
+            <div class="spinner"></div>
+         </div>
+      </div>
+      <!-- Navigation Bar-->
+      <header id="topnav">
+         <div class="topbar-main">
+            <div class="container-fluid">
+               <!-- Logo container-->
+               <div class="logo">
+                  <a href="http://heysend.sheenz.in/admin/dashboard" class="logo">
+                  <img src="http://heysend.sheenz.in/assets/images/heysend-icon.png" class="img-icon" />
+                  <span class="hide-phone"><img src="http://heysend.sheenz.in/assets/images/heysend.png" class="img-text" />
+                  </span>
+                  </a>
+               </div>
+               <!-- End Logo container-->
+               <div class="menu-extras topbar-custom">
+                  <ul class="list-unstyled float-right mb-0">
+                     <!-- language-->
+                     <!--<li class="dropdown notification-list hide-phone">
+                        <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="false" aria-expanded="false">
+                            English <img src="/assets/images/flags/us_flag.jpg" class="ml-2" height="16" alt=""/>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right language-switch">
+                            <a class="dropdown-item" href="#"><img src="/assets/images/flags/italy_flag.jpg" alt="" height="16"/><span> Italian </span></a>
+                            <a class="dropdown-item" href="#"><img src="/assets/images/flags/french_flag.jpg" alt="" height="16"/><span> French </span></a>
+                            <a class="dropdown-item" href="#"><img src="/assets/images/flags/spain_flag.jpg" alt="" height="16"/><span> Spanish </span></a>
+                            <a class="dropdown-item" href="#"><img src="/assets/images/flags/russia_flag.jpg" alt="" height="16"/><span> Russian </span></a>
+                        </div>
+                        </li>-->
+                     <!-- notification-->
+                     <!--<li class="dropdown notification-list">
+                        <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button"
+                           aria-haspopup="false" aria-expanded="false">
+                            <i class="dripicons-mail noti-icon"></i>
+                            <span class="badge badge-danger noti-icon-badge">5</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg border-0">
+                            <div class="dropdown-item noti-title">
+                                <h5><span class="badge badge-danger float-right">745</span>Messages</h5>
+                            </div>
+                        
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon"><img src="/assets/images/users/avatar-2.jpg" alt="user-img" class="img-fluid rounded-circle" /> </div>
+                                <p class="notify-details"><b>Charles M. Jones</b><small class="text-muted">Dummy text of the printing and typesetting industry.</small></p>
+                            </a>
+                        
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon"><img src="/assets/images/users/avatar-3.jpg" alt="user-img" class="img-fluid rounded-circle" /> </div>
+                                <p class="notify-details"><b>Thomas J. Mimms</b><small class="text-muted">You have 87 unread messages</small></p>
+                            </a>
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon"><img src="/assets/images/users/avatar-4.jpg" alt="user-img" class="img-fluid rounded-circle" /> </div>
+                                <p class="notify-details"><b>Luis M. Konrad</b><small class="text-muted">It is a long established fact that a reader will</small></p>
+                            </a>
+                        
+                            <a href="javascript:void(0);" class="dropdown-item notify-item border-top">
+                                View All
+                            </a>
+                        
+                        </div>
+                        </li>
+                        
+                        <li class="dropdown notification-list">
+                        <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button"
+                           aria-haspopup="false" aria-expanded="false">
+                            <i class="dripicons-bell noti-icon"></i>
+                            <span class="badge badge-success noti-icon-badge">2</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg border-0">
+                            <div class="dropdown-item noti-title">
+                                <h5>Notification (3)</h5>
+                            </div>
+                        
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-success"><i class="mdi mdi-cart-outline"></i></div>
+                                <p class="notify-details"><b>Your order is placed</b><small class="text-muted">Dummy text of the printing and typesetting industry.</small></p>
+                            </a>
+                        
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-warning"><i class="mdi mdi-message"></i></div>
+                                <p class="notify-details"><b>New Message received</b><small class="text-muted">You have 87 unread messages</small></p>
+                            </a>
+                        
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-info"><i class="mdi mdi-glass-cocktail"></i></div>
+                                <p class="notify-details"><b>Your item is shipped</b><small class="text-muted">It is a long established fact that a reader will</small></p>
+                            </a>
+                        
+                            <a href="javascript:void(0);" class="dropdown-item notify-item border-top">
+                                View All
+                            </a>
+                        
+                        </div>
+                        </li>-->
+                     <!-- User-->
+                     <li class="dropdown notification-list">
+                        <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button"
+                           aria-haspopup="false" aria-expanded="false">
+                        <img src="http://heysend.sheenz.in/assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right profile-dropdown  border-0">
+                           <!-- item-->
+                           <div class="dropdown-item noti-title">
+                              <h5>Welcome</h5>
+                           </div>
+                           <a class="dropdown-item" href="/client/settings"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile</a>
+                           <a class="dropdown-item" href="/client/auth/logout"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
+                        </div>
+                     </li>
+                     <li class="menu-item">
+                        <!-- Mobile menu toggle-->
+                        <a class="navbar-toggle nav-link">
+                           <div class="lines">
+                              <span></span>
+                              <span></span>
+                              <span></span>
+                           </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                     </li>
+                  </ul>
+               </div>
+               <!-- end menu-extras -->
+               <div class="clearfix"></div>
+            </div>
+            <!-- end container -->
+         </div>
+         <!-- end topbar-main -->
+         <!-- MENU Start -->
+         <div class="navbar-custom">
+            <div class="container-fluid">
+               <div id="navigation">
+                  <!-- Navigation Menu-->
+                  <ul class="navigation-menu">
+                     <li class="has-submenu">
+                        <a href="http://heysend.sheenz.in/client/dashboard"><i class="dripicons-device-desktop"></i>Dashboard</a>
+                     </li>
+                     <li class="has-submenu">
+                        <a href="#"><i class="fas fa-clipboard-list"></i>Lists</a>
+                        <ul class="submenu megamenu">
+                           <li>
+                              <ul>
+                                 <li><a href="http://heysend.sheenz.in/client/lists">List</a></li>
+                                 <li><a href="http://heysend.sheenz.in/client/segments">List Subscriber</a></li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="has-submenu">
+                        <a href="#"><i class="fas fa-people-carry"></i>Campaigns</a>
+                        <ul class="submenu megamenu">
+                           <li>
+                              <ul>
+                                 <li><a href="http://heysend.sheenz.in/client/campaigns">Campaigns</a></li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="has-submenu">
+                        <a href="#"><i class="dripicons-graph-bar"></i>Reports</a>
+                        <ul class="submenu megamenu">
+                           <li>
+                              <ul>
+                                 <li><a href="http://heysend.sheenz.in/client/reports/index">Campaigns Reports</a></li>
+                                 <li><a href="http://heysend.sheenz.in/client/reports/client-daily-report
+                                    ">Client Daily Report</a></li>
+                                 <li><a href="http://heysend.sheenz.in/client/reports/client-month-report
+                                    ">Client Month Report</a></li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="has-submenu">
+                        <a href="#"><i class="fas fa-list"></i>Blacklist</a>
+                        <ul class="submenu megamenu">
+                           <li>
+                              <ul>
+                                 <li><a href="http://heysend.sheenz.in/client/blacklists">Blacklist</a></li>
+                                 <li><a href="http://heysend.sheenz.in/client/blacklists/unsubscribe">Unsubscribe</a></li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+                  <!-- End navigation menu -->
+               </div>
+               <!-- end #navigation -->
+            </div>
+            <!-- end container -->
+         </div>
+         <!-- end navbar-custom -->
+      </header>
+      <!-- End Navigation Bar-->
+      <script>
+         $(document).ready(function () {
+             var currHrs = 523;
+             
+             var co_type = $("input[name='co_type']").val();
+             if(co_type == 'hours')
+             {
+                 $('#by_days').hide();
+                 $('#by_hours').show();
+                 $('#by_date').hide();
+             }
+             else if(co_type == 'date')
+             {
+                 $('#by_days').hide();
+                 $('#by_hours').hide();
+                 $('#by_date').show();
+             }
+             else
+             {
+                 $('#by_days').show();
+                 $('#by_hours').hide();
+                 $('#by_date').hide();
+             }
+         
+             $("#created").ionRangeSlider(
+                 {
+                     type: "double",
+                     min: 0,
+                     max: 90,
+                     from: 0,
+                     to: 0,
+                     from_fixed:true,
+                 }
+             );
+             $("#view").ionRangeSlider(
+                 {
+                     type: "double",
+                     min: 0,
+                     max: 90,
+                     from: 0,
+                     to: 0,
+                 }
+             );
+             $("#click").ionRangeSlider(
+                 {
+                     type: "double",
+                     min: 0,
+                     max: 90,
+                     from: 0,
+                     to: 0,
+                 }
+             );
+             $("#view_h").ionRangeSlider(
+                 {
+                     type: "double",
+                     min: 0,
+                     max: 1380,
+                     from: 0,
+                     to: 0,
+                     step: 10,
+                     //from_max: currHrs,
+                     prettify: function(value){
+                         var hours = Math.floor(Math.abs(value) / 60);
+                         var minutes = Math.abs(value) % 60;
+                         var tt = '';
+                         if(hours > 0){
+                             tt += hours + ' h '
+                         }
+                         if(minutes > 0){
+                             tt += minutes + ' mn'
+                         }
+                         return tt;
+                     }
+                 }
+             );
+             $("#click_h").ionRangeSlider(
+                 {
+                     type: "double",
+                     min: 0,
+                     max: 1380,
+                     from: 0,
+                     to: 0,
+                     step: 10,
+                     //from_max: currHrs,
+                     prettify: function(value){
+                         var hours = Math.floor(Math.abs(value) / 60);
+                         var minutes = Math.abs(value) % 60;
+                         var tt = '';
+                         if(hours > 0){
+                             tt += hours + ' h '
+                         }
+                         if(minutes > 0){
+                             tt += minutes + ' mn'
+                         }
+                         return tt;
+                     }
+                 }
+             );
+         });
+      </script>
+      <div class="wrapper">
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="page-title-box">
+                  <h4 class="page-title">Segment</h4>
+                  <div class="btn-group mt-2">
+                     <ol class="breadcrumb hide-phone p-0 m-0">
+                     <div class="row">
+                        <div class="col-sm-12">
+                           <ol class="breadcrumb m-b-10">
+                              <li class="breadcrumb-item"><a href="/client/dashboard">Home</a> </li>
+                              <li class="breadcrumb-item active">Segment Data</li>
+                        </div>
+                     </div>
+                     </ol>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- end page title end breadcrumb -->
+         <div class="row">
+            <div class="col-12">
+               <div class="card">
+                  <div class="card-body">
+                     <div class="form-group row">
+                        <form name="srResult" action="" method="post" accept-charset="utf-8" class="segment-data">
+                           <div class="row">
+                              <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-4">
+                                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-12">
+                                    <div class="form-group">
+                                       <input type="text" class="form-control" name="keyword" id="keyword" placeholder="Keyword"> 
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-12">
+                                    <div class="form-group">
+                                       <label for="campaign">Campaign</label>
+                                       <select id="campaign" name="campaign" class="select2 form-control" multiple data-placeholder="Campaign">
+                                          <option value="14">new data</option>
+                                          <option value="15">new data #1</option>
+                                          <option value="16">hello #1</option>
+                                          <option value="17">Campaign-20-09-2019</option>
+                                          <option value="18">Campaign 20-09-2019</option>
+                                          <option value="19">Campaign 20-09-2019 #1</option>
+                                          <option value="20">Campaign 20-09-2019 #2</option>
+                                          <option value="21">Campaign 20-09-2019 #3</option>
+                                          <option value="22">Campaign 20-09-2019 #4</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-12">
+                                    <div class="form-group">
+                                       <label for="location">Location</label>
+                                       <select id="location" name="location" class="form-control select2" data-placeholder="Location" multiple>
+                                          <option value="Mumbai">Mumbai</option>
+                                          <option value="Delhi">Delhi</option>
+                                          <option value="Bangalore">Bangalore</option>
+                                          <option value="Hyderabad">Hyderabad</option>
+                                          <option value="Ahmedabad">Ahmedabad</option>
+                                          <option value="Chennai">Chennai</option>
+                                          <option value="Kolkata">Kolkata</option>
+                                          <option value="Surat">Surat</option>
+                                          <option value="Pune">Pune</option>
+                                          <option value="Jaipur">Jaipur</option>
+                                          <option value="Lucknow">Lucknow</option>
+                                          <option value="Kanpur">Kanpur</option>
+                                          <option value="Nagpur">Nagpur</option>
+                                          <option value="Visakhapatnam">Visakhapatnam</option>
+                                          <option value="Indore">Indore</option>
+                                          <option value="Thane">Thane</option>
+                                          <option value="Bhopal">Bhopal</option>
+                                          <option value="Patna">Patna</option>
+                                          <option value="Vadodara">Vadodara</option>
+                                          <option value="Ghaziabad">Ghaziabad</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-12">
+                                    <div class="form-group">
+                                       <label for="category">Category</label>
+                                       <select id="category" name="category" class="form-control select2" data-placeholder="Category" multiple>
+                                          <option>Agencies</option>
+                                          <option>Automobile</option>
+                                          <option>Banking</option>
+                                          <option>Bus / Roadways Industry</option>
+                                          <option>Chemical / Insecticide Industry</option>
+                                          <option>E-com</option>
+                                          <option value="Artisanal/handcrafted goods">&nbsp;&nbsp;&nbsp;&nbsp;Artisanal/handcrafted goods</option>
+                                          <option value="Grocery and fresh foods">&nbsp;&nbsp;&nbsp;&nbsp;Grocery and fresh foods</option>
+                                          <option value="Health and wellness">&nbsp;&nbsp;&nbsp;&nbsp;Health and wellness</option>
+                                          <option value="Pet products">&nbsp;&nbsp;&nbsp;&nbsp;Pet products</option>
+                                          <option value="Sporting goods">&nbsp;&nbsp;&nbsp;&nbsp;Sporting goods</option>
+                                          <option value="Virtual reality">&nbsp;&nbsp;&nbsp;&nbsp;Virtual reality</option>
+                                          <option>Education</option>
+                                          <option>Electronics</option>
+                                          <option>Events & Entertainment</option>
+                                          <option>FMCG Industry </option>
+                                          <option>Fashion</option>
+                                          <option>Film Industry </option>
+                                          <option>Finance</option>
+                                          <option>Gems & Jewellery</option>
+                                          <option>Gym & Fitness</option>
+                                          <option>Health Care</option>
+                                          <option>Home Services</option>
+                                          <option>Hospitals </option>
+                                          <option>Hotel</option>
+                                          <option>IT</option>
+                                          <option>Insurance</option>
+                                          <option value="Home Insurance">&nbsp;&nbsp;&nbsp;&nbsp;Home Insurance</option>
+                                          <option>Logistics</option>
+                                          <option>Music Industry </option>
+                                          <option>Pharma</option>
+                                          <option>Real Estate</option>
+                                          <option>Retail</option>
+                                          <option>Securities</option>
+                                          <option>Television Industry </option>
+                                          <option>Tourism</option>
+                                          <option>Travel</option>
+                                          <option>Travel & Tourism</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-12">
+                                    <div class="form-group">
+                                       <label for="location">Domain</label>
+                                       <select id="domain" name="domain" class="form-control select2" data-placeholder="Domain" multiple>
+                                          <option value="abc.com">abc.com</option>
+                                          <option value="sheenz.in">sheenz.in</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-12">
+                                    <div class="form-group">
+                                       <label for="device">Device</label>
+                                       <select id="device" name="device" class="form-control select2" data-placeholder="Device" multiple>
+                                          <option value="Android">Android</option>
+                                          <option value="iPhone">iPhone</option>
+                                          <option value="Wap">Wap</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-12">
+                                    <div class="form-group row">
+                                       <div class="col-sm-12 col-xs-12">
+                                          <span class="clearfix" style="font-size:12px;margin-bottom:5px;display:block">Added</span>
+                                          <input type="text" id="created">
+                                       </div>
+                                    </div>
+                                    <input type="hidden" name="co_type" value="">
+                                 </div>
+                                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-12">
+                                    <div class="form-group row">
+                                       <div class="col-sm-12 col-xs-12">
+                                          <span class="clearfix" style="font-size:12px;margin-bottom:5px;display:block">By Days Opener</span>
+                                          <input type="text" id="view">
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-12">
+                                    <div class="form-group row">
+                                       <div class="col-sm-12 col-xs-12">
+                                          <span class="clearfix" style="font-size:12px;margin-bottom:5px;display:block">By Days Clicker</span>
+                                          <input type="text" id="click">
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-12">
+                                    <div class="form-group row">
+                                       <div class="col-sm-12 col-xs-12">
+                                          <span class="clearfix" style="font-size:12px;margin-bottom:5px;display:block">By Hours Opener</span>
+                                          <input type="text" id="view_h">
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-12">
+                                    <div class="form-group row">
+                                       <div class="col-sm-12 col-xs-12">
+                                          <span class="clearfix" style="font-size:12px;margin-bottom:5px;display:block">By Hours Clicker</span>
+                                          <input type="text" id="click_h">
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-12">
+                                    <div class="form-group">
+                                       <button class="btn btn-primary waves-effect waves-light" type="submit" name="search_data" id="search_data" title="Search">Search</button>
+                                       <button class="btn btn-primary waves-effect waves-light" type="button" name="search_save" id="search_save" data-toggle="modal" data-target=".bs-example-modal-sm" title="Save Segment">Save</button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-8">
+                                 <table id="table" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                    <thead>
+                                       <tr>
+                                          <th>Email</th>
+                                          <th>Created Date</th>
+                                          <th>Last Clicked Date</th>
+                                          <th>Last Open Date</th>
+                                          <th>Last Clicked Date</th>
+                                       </tr>
+                                    </thead>
+                                    <!-- Add Some Table -->
+                                        <tbody>
+                                            <tr>
+                                                <td>saurabh.shukla@gmail.com</td>
+                                                <td>23-10-2019</td>
+                                                <td>30-10-2019</td>
+                                                <td>7-11-2019</td>
+                                                <td>17-11-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>saurabh.shukla@gmail.com</td>
+                                                <td>23-10-2019</td>
+                                                <td>30-10-2019</td>
+                                                <td>7-11-2019</td>
+                                                <td>17-11-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>saurabh.shukla@gmail.com</td>
+                                                <td>23-10-2019</td>
+                                                <td>30-10-2019</td>
+                                                <td>7-11-2019</td>
+                                                <td>17-11-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>saurabh.shukla@gmail.com</td>
+                                                <td>23-10-2019</td>
+                                                <td>30-10-2019</td>
+                                                <td>7-11-2019</td>
+                                                <td>17-11-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>saurabh.shukla@gmail.com</td>
+                                                <td>23-10-2019</td>
+                                                <td>30-10-2019</td>
+                                                <td>7-11-2019</td>
+                                                <td>17-11-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>saurabh.shukla@gmail.com</td>
+                                                <td>23-10-2019</td>
+                                                <td>30-10-2019</td>
+                                                <td>7-11-2019</td>
+                                                <td>17-11-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>saurabh.shukla@gmail.com</td>
+                                                <td>23-10-2019</td>
+                                                <td>30-10-2019</td>
+                                                <td>7-11-2019</td>
+                                                <td>17-11-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>saurabh.shukla@gmail.com</td>
+                                                <td>23-10-2019</td>
+                                                <td>30-10-2019</td>
+                                                <td>7-11-2019</td>
+                                                <td>17-11-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>saurabh.shukla@gmail.com</td>
+                                                <td>23-10-2019</td>
+                                                <td>30-10-2019</td>
+                                                <td>7-11-2019</td>
+                                                <td>17-11-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>saurabh.shukla@gmail.com</td>
+                                                <td>23-10-2019</td>
+                                                <td>30-10-2019</td>
+                                                <td>7-11-2019</td>
+                                                <td>17-11-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>saurabh.shukla@gmail.com</td>
+                                                <td>23-10-2019</td>
+                                                <td>30-10-2019</td>
+                                                <td>7-11-2019</td>
+                                                <td>17-11-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>saurabh.shukla@gmail.com</td>
+                                                <td>23-10-2019</td>
+                                                <td>30-10-2019</td>
+                                                <td>7-11-2019</td>
+                                                <td>17-11-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>saurabh.shukla@gmail.com</td>
+                                                <td>23-10-2019</td>
+                                                <td>30-10-2019</td>
+                                                <td>7-11-2019</td>
+                                                <td>17-11-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>saurabh.shukla@gmail.com</td>
+                                                <td>23-10-2019</td>
+                                                <td>30-10-2019</td>
+                                                <td>7-11-2019</td>
+                                                <td>17-11-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>saurabh.shukla@gmail.com</td>
+                                                <td>23-10-2019</td>
+                                                <td>30-10-2019</td>
+                                                <td>7-11-2019</td>
+                                                <td>17-11-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>saurabh.shukla@gmail.com</td>
+                                                <td>23-10-2019</td>
+                                                <td>30-10-2019</td>
+                                                <td>7-11-2019</td>
+                                                <td>17-11-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>saurabh.shukla@gmail.com</td>
+                                                <td>23-10-2019</td>
+                                                <td>30-10-2019</td>
+                                                <td>7-11-2019</td>
+                                                <td>17-11-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>saurabh.shukla@gmail.com</td>
+                                                <td>23-10-2019</td>
+                                                <td>30-10-2019</td>
+                                                <td>7-11-2019</td>
+                                                <td>17-11-2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>saurabh.shukla@gmail.com</td>
+                                                <td>23-10-2019</td>
+                                                <td>30-10-2019</td>
+                                                <td>7-11-2019</td>
+                                                <td>17-11-2019</td>
+                                            </tr>
+                                        </tbody>
+                                        <!-- End Add some table -->
+
+                                 </table>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+               <!-- end col -->
+            </div>
+            <!-- end row -->
+         </div>
+         <!-- end container -->
+      </div>
+      <!-- end wrapper -->
+      <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="dialog-modal">
+         <div class="modal-dialog" role="document">
+            <form id="my-form" onSubmit="return false">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <h5 class="modal-title" id="mySmallModalLabel">Save Segment</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" title="Save Segment" data-toggle="tooltip" data-placement="top" data-animation="false" data-html="true">
+                     <span aria-hidden="true">&times;</span>
+                     </button>
+                  </div>
+                  <div class="modal-body">
+                     <input class="form-control" name="segment_name" id="segment_name" placeholder="Segment Name" required data-parsley-pattern="/[^TESTMAIL|TRANSACTIONALMAIL$]/i" data-parsley-error-message="TESTMAIL and TRANSACTIONALMAIL can not be used as filename" data-parsley-id="4" type="text">
+                  </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-dismiss="modal" title="Close" data-toggle="tooltip" data-placement="top" data-animation="false" data-html="true">Close</button>
+                     <button type="button" class="btn btn-primary" id="save_segment" title="Save" data-toggle="tooltip" data-placement="top" data-animation="false" data-html="true">Save</button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+      <script>
+         $(document).on('click', '[name="co_type"]', function () {
+                 var co_type = $("input[name='co_type']:checked").val();
+                 if(co_type == 'hours')
+                 {
+                     $('#by_days').hide();
+                     $('#by_hours').show();
+                     $('#by_date').hide();
+                 }
+                 else if(co_type == 'date')
+                 {
+                     $('#by_days').hide();
+                     $('#by_hours').hide();
+                     $('#by_date').show();
+                 }
+                 else
+                 {
+                     $('#by_days').show();
+                     $('#by_hours').hide();
+                     $('#by_date').hide();
+                 }
+             });
+         
+             $('#search_save').on('click',function() {
+                 $('#dialog-modal').modal('show');
+                 return false;
+             });
+             
+             
+             $('#save_segment').on('click',function() {
+                 var validate = 0;
+                 if($('#my-form').parsley().validate()) {
+                     validate = 1;
+                 }
+                 if(validate > 0){ 
+                 var segment_name = $('#segment_name').val().trim();
+                 var args = getFields();
+                 var listArgs = {};
+                 listArgs.LISTTYPE = '';
+                 listArgs.PRECRITERIA = '';
+                  
+                 $.ajax({
+                     url         :   '/client/segments/create-segment',
+                     type        :   'post',
+                     dataType    :   "json",  
+                     data        :   {"segment_name":segment_name, "criteria": args, "listArgs":listArgs },
+                     success     :   function(data) {
+                     if(data.SUCCESS == 1)
+                     {
+                         $('#dialog-modal').modal('hide');
+                         var redirect_url = '/client/lists/';
+                         $(location).attr('href', redirect_url);
+                     }
+                     else
+                     {
+                         swal({
+                             title: "",
+                             text: data.MSG,
+                             timer: 2000,
+                             showConfirmButton: false
+                         });
+                     }
+                   }
+                 });
+                 }
+             });
+         
+             $('#segment_name').keypress(function(e){
+                 if(e.keyCode == 13)
+                 {
+                     $('#save_segment').click(); 
+                 }
+             });
+         
+             $('#cancel').click(function() {
+                 window.history.back();
+             });
+         
+             $( document ).ready(function() {
+             var not_allow_copy = '1';
+             if(not_allow_copy !='1')
+             {
+                 $('.disableEvent').bind('cut copy paste', function (e) {
+                         e.preventDefault();
+                     });
+             }
+         
+                 var args = {};
+                 args.keyWord = $('#keyword').val().trim();
+                 args.CAMPAIGN = $('#campaign').val();
+                 args.LOC = $('#location').val();
+                 args.CAT = $('#category').val();
+                 args.DOMAIN = $('#domain').val();
+                 args.DEVICE = $('#device').val();
+                 args.CREATED = $('#created').val();
+                 args.VIEWED = $('#view').val();
+                 args.VIEWED_HRS = $('#view_h').val();
+                 args.CLICKED = $('#click').val();
+                 args.CLICKED_HRS = $('#click_h').val();
+                 args.HRSTYPE = '';
+                 args.CLIENT_UID= '5d77296737c2a';
+                 args.list_uid = '';
+                 args.LISTTYPE = '';
+                 args.CRITERIA = '';
+                 args.EXTRAINFO = '';
+                 args.ONLOADPAGE = '1';
+                 getDataTblInfo(args);
+             });
+         
+             $('#search_data').on('click',function() {
+                 var args = {};
+                 args.keyWord = $('#keyword').val().trim();
+                 args.CAMPAIGN = $('#campaign').val();
+                 args.LOC = $('#location').val();
+                 args.CAT = $('#category').val();
+                 args.DOMAIN = $('#domain').val();
+                 args.DEVICE = $('#device').val();
+                 args.CREATED = $('#created').val();
+                 args.VIEWED = $('#view').val();
+                 args.CLICKED = $('#click').val();
+                 args.VIEWED_HRS = $('#view_h').val();
+                 args.CLICKED_HRS = $('#click_h').val();
+                 args.FROMCLICK = 1;
+                 args.FROMSEARCH = 1;
+                 args.CLIENT_UID= '5d77296737c2a';
+                 args.LISTTYPE = '';
+                 args.PRECRITERIA = '';
+                 getDataTblInfo(args);
+                 return false; 
+             });
+         
+             function getDataTblInfo(allSearchData)
+             {
+                 var segmentUID = '';
+                 if(segmentUID)
+                 {
+                     
+                     var campJoin = [''];
+                     var locJoin = [''];
+                     var catJoin = [''];
+                     var domainJoin = [''];
+                     var deviceJoin = [''];
+                     if(locJoin)
+                     {
+                         if(!allSearchData.LOC && !allSearchData.FROMCLICK)
+                         {
+                             $('#location').val(locJoin).trigger('change');
+                         }
+                     }
+                     if(campJoin)
+                     {
+                         if(!allSearchData.CAMPAIGN && !allSearchData.FROMCLICK)
+                         {
+                             $('#campaign').val(campJoin).trigger('change');
+                         }
+                     }
+                     if(catJoin)
+                     {
+                         if(!allSearchData.CAT && !allSearchData.FROMCLICK)
+                         {
+                             $('#category').val(catJoin).trigger('change');
+                         }
+                     }
+                     if(domainJoin)
+                     {
+                         if(!allSearchData.DOMAIN && !allSearchData.FROMCLICK)
+                         {
+                             $('#domain').val(domainJoin).trigger('change');
+                         }
+                     }
+                     if(deviceJoin)
+                     {
+                         if(!allSearchData.DEVICE && !allSearchData.FROMCLICK)
+                         {
+                             $('#device').val(deviceJoin).trigger('change');
+                         }
+                     }
+                    
+                     if(!allSearchData.FROMSEARCH)
+                     {
+                             var parse_extrainfo = JSON.parse(allSearchData.EXTRAINFO);
+                             $("#created").data("ionRangeSlider").update({from: parse_extrainfo.duration_created_min});
+                             $("#created").data("ionRangeSlider").update({to: parse_extrainfo.duration_created_max});
+                             
+                             setTimeout(function(){ $("#click").data("ionRangeSlider").update({from: parse_extrainfo.days_open_min});}, 3);
+                             $("#view").data("ionRangeSlider").update({to: parse_extrainfo.days_open_max});
+                             setTimeout(function(){ $("#click").data("ionRangeSlider").update({from: parse_extrainfo.days_click_min});}, 3);
+                             $("#click").data("ionRangeSlider").update({to: parse_extrainfo.days_click_max});
+                             
+                             setTimeout(function(){ $("#view_h").data("ionRangeSlider").update({from: parse_extrainfo.hours_open_min});}, 3);
+                             $("#view_h").data("ionRangeSlider").update({to: parse_extrainfo.hours_open_max});
+                             setTimeout(function(){ $("#click_h").data("ionRangeSlider").update({from: parse_extrainfo.hours_click_min});}, 3);
+                             $("#click_h").data("ionRangeSlider").update({to: parse_extrainfo.hours_click_max});
+                         }
+                    
+                     if(!allSearchData.FROMSEARCH)
+                     {
+                         $("#keyword").val('');
+                     }
+                 }
+             //allSearchData.COMPANY_ID = '6';
+             allSearchData.EMAIL_HIDE = '0';
+                 table = $('#table').DataTable({
+                 "responsive": true,
+                     "processing": true, 
+                     "serverSide": true,
+                     "ordering": false,
+                     "searching": false,
+                     "lengthChange": false,
+                     "pageLength": 50,
+                     "destroy": true,
+                 "ajax": {
+                     "url": "/client/segments/segmentlist",
+                     "type": "POST",
+                     "dataType":"json",
+                     "data":{'allSearchParam':allSearchData},
+                 },
+                 "columnDefs": [ {
+                     "targets": '',
+                     "data": null,
+                     "render": function ( data, type, row ) {
+                     },
+                     "defaultContent": ''
+                     },
+                  ],
+                 "dom": '<"top"i>t<"bottom"flp><"clear">',
+                 "columns": [
+                     { "name": ""},
+                     { "name": ""},
+                     { "name": ""},
+                     { "name": ""},
+                 ]
+             });
+         }
+         
+             function getCriteria(args, cb)
+             {
+                 $.ajax({
+                         url:"/client/segments/criteria",
+                         type:'post',
+                         dataType:"json",
+                         data:{"searchCriteria":args},
+                         success: function(respo){
+                             return cb(respo);
+                         },
+                         error: function(xhr, status, error){
+                         }
+                     });
+             }
+         
+             $( "#search_update" ).click(function(e) {
+             swal(
+              {
+                  title: "Are you sure?",
+                  type: "warning",
+                  showCancelButton: true,
+                  confirmButtonClass: "btn-danger",
+                  closeOnConfirm: false,
+              },
+              function(isConfirm) {
+                  if (isConfirm) {
+                     var args = getFields();
+                     var listArgs = {};
+                     //listArgs.LISTTYPE = '';
+                    // listArgs.PRECRITERIA = '';
+                      $.ajax( {
+                          url        :   '/client/segments/update-segment',
+                          type       :   'post',
+                          dataType   :   "json",  
+                          data       :   {"criteria": args, "listArgs":listArgs },
+                          success:function(data) {
+                     var redirect_url = '/client/lists/';
+                     $(location).attr('href', redirect_url);
+                          }
+                      });
+                  }
+              }
+             );
+             } );
+         
+             function getFields()
+             {
+                 var args = {};
+                 args.keyWord = $('#keyword').val().trim();
+                 args.CAMPAIGN = $('#campaign').val();
+                 args.LOC = $('#location').val()
+                 args.CAT = $('#category').val();
+                 args.DOMAIN = $('#domain').val();
+                 args.DEVICE = $('#device').val();
+                 args.CREATED = $('#created').val();
+                 args.VIEWED = $('#view').val();
+                 args.CLICKED = $('#click').val();
+                 args.VIEWED_HRS = $('#view_h').val();
+                 args.CLICKED_HRS = $('#click_h').val();
+                 args.CLIENT_UID= '5d77296737c2a';
+                 args.list_uid = '';
+                 return args;
+             }
+      </script>        
+      <!-- Footer -->
+      <footer class="footer">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-12">
+                  © 2019 Developed by Prudigital pvt ltd.
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- End Footer -->
+      <!-- jQuery  -->
+      <link href="http://heysend.sheenz.in/assets/plugins/ion-rangeslider/ion.rangeSlider.css" rel="stylesheet" type="text/css"/>
+      <link href="http://heysend.sheenz.in/assets/plugins/ion-rangeslider/ion.rangeSlider.skinModern.css" rel="stylesheet" type="text/css"/>
+      <link href="http://heysend.sheenz.in/assets/plugins/powerange/powerange.css" rel="stylesheet" type="text/css"/>
+      <script src="http://heysend.sheenz.in/assets/plugins/ion-rangeslider/ion.rangeSlider.min.js"></script>
+      <script src="http://heysend.sheenz.in/assets/plugins/powerange/powerange.js"></script>
+      <script src="http://heysend.sheenz.in/assets/pages/rangeslider-init.js"></script> 
+      <script src="http://heysend.sheenz.in/assets/js/popper.min.js"></script>
+      <script src="http://heysend.sheenz.in/assets/js/bootstrap.min.js"></script>
+      <script src="http://heysend.sheenz.in/assets/js/modernizr.min.js"></script>
+      <script src="http://heysend.sheenz.in/assets/js/waves.js"></script>
+      <script src="http://heysend.sheenz.in/assets/js/jquery.slimscroll.js"></script>
+      <script src="http://heysend.sheenz.in/assets/js/jquery.nicescroll.js"></script>
+      <script src="http://heysend.sheenz.in/assets/js/jquery.scrollTo.min.js"></script>
+      <!-- KNOB JS -->
+      <script src="http://heysend.sheenz.in/assets/plugins/jquery-knob/excanvas.js"></script>
+      <script src="http://heysend.sheenz.in/assets/plugins/jquery-knob/jquery.knob.js"></script>
+      <!-- Required datatable js -->
+      <script src="http://heysend.sheenz.in/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+      <script src="http://heysend.sheenz.in/assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+      <!-- Buttons examples -->
+      <script src="http://heysend.sheenz.in/assets/plugins/datatables/dataTables.buttons.min.js"></script>
+      <script src="http://heysend.sheenz.in/assets/plugins/datatables/buttons.bootstrap4.min.js"></script>
+      <script src="http://heysend.sheenz.in/assets/plugins/datatables/jszip.min.js"></script>
+      <script src="http://heysend.sheenz.in/assets/plugins/datatables/pdfmake.min.js"></script>
+      <script src="http://heysend.sheenz.in/assets/plugins/datatables/vfs_fonts.js"></script>
+      <script src="http://heysend.sheenz.in/assets/plugins/datatables/buttons.html5.min.js"></script>
+      <script src="http://heysend.sheenz.in/assets/plugins/datatables/buttons.print.min.js"></script>
+      <script src="http://heysend.sheenz.in/assets/plugins/datatables/buttons.colVis.min.js"></script>
+      <!-- Responsive examples -->
+      <script src="http://heysend.sheenz.in/assets/plugins/datatables/dataTables.responsive.min.js"></script>
+      <script src="http://heysend.sheenz.in/assets/plugins/datatables/responsive.bootstrap4.min.js"></script>
+      <script src="http://heysend.sheenz.in/assets/js/app.js"></script>
+      <script>
+         $(window).bind("load", function() {
+           window.setTimeout(function() {
+             $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                 $(this).remove();
+             });
+         }, 4000);
+         });
+      </script>
+      <style type="text/css">
+         .input-FW {width:100%;border-radius:5px;box-sizing:border-box;padding:5px;border:1px solid #e1e1e1;}
+         .input-FW:focus {outline:0px;} 
+      </style>
+   </body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Bootstrap Example</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <style type="text/css">
+         body {  -webkit-transition: opacity 600ms, visibility 600ms;
+         transition: opacity 600ms, visibility 600ms;}
+         #advance-search {display: none;-webkit-transition:all 5s ease;
+         -moz-transition:all 5s ease;  -webkit-transition: opacity 600ms, visibility 600ms;
+         transition: opacity 600ms, visibility 600ms;}
+         #advance-button {  -webkit-transition: opacity 600ms, visibility 600ms;
+         transition: opacity 600ms, visibility 600ms;}
+      </style>
+   </head>
+   <body>
+      <section>
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-4">
+                  <div class="form-group">
+                     <label for="campaign">Keywords</label>
+                     <input type="text" class="form-control" name="keyword" id="keyword" placeholder="Keyword"> 
+                  </div>
+               </div>
+               <div class="col-sm-4">
+                  <div class="form-group">
+                     <label for="campaign">Campaign</label>
+                     <select id="campaign" name="campaign" class="select2 form-control" data-placeholder="Campaign">
+                        <option value="14">new data</option>
+                        <option value="15">new data #1</option>
+                        <option value="16">hello #1</option>
+                        <option value="17">Campaign-20-09-2019</option>
+                        <option value="18">Campaign 20-09-2019</option>
+                        <option value="19">Campaign 20-09-2019 #1</option>
+                        <option value="20">Campaign 20-09-2019 #2</option>
+                        <option value="21">Campaign 20-09-2019 #3</option>
+                        <option value="22">Campaign 20-09-2019 #4</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="col-sm-4">
+                  <div class="form-group">
+                     <label for="location">Location</label>
+                     <select id="location" name="location" class="form-control select2" data-placeholder="Location">
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Ahmedabad">Ahmedabad</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Surat">Surat</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Jaipur">Jaipur</option>
+                        <option value="Lucknow">Lucknow</option>
+                        <option value="Kanpur">Kanpur</option>
+                        <option value="Nagpur">Nagpur</option>
+                        <option value="Visakhapatnam">Visakhapatnam</option>
+                        <option value="Indore">Indore</option>
+                        <option value="Thane">Thane</option>
+                        <option value="Bhopal">Bhopal</option>
+                        <option value="Patna">Patna</option>
+                        <option value="Vadodara">Vadodara</option>
+                        <option value="Ghaziabad">Ghaziabad</option>
+                     </select>
+                  </div>
+               </div>
+            </div>
+            <div id="advance-search">
+               <div class="row">
+                  <div class="col-sm-4">
+                     <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" name="category" class="form-control select2" data-placeholder="Category">
+                           <option>Agencies</option>
+                           <option>Automobile</option>
+                           <option>Banking</option>
+                           <option>Bus / Roadways Industry</option>
+                           <option>Chemical / Insecticide Industry</option>
+                           <option>E-com</option>
+                           <option value="Artisanal/handcrafted goods">&nbsp;&nbsp;&nbsp;&nbsp;Artisanal/handcrafted goods</option>
+                           <option value="Grocery and fresh foods">&nbsp;&nbsp;&nbsp;&nbsp;Grocery and fresh foods</option>
+                           <option value="Health and wellness">&nbsp;&nbsp;&nbsp;&nbsp;Health and wellness</option>
+                           <option value="Pet products">&nbsp;&nbsp;&nbsp;&nbsp;Pet products</option>
+                           <option value="Sporting goods">&nbsp;&nbsp;&nbsp;&nbsp;Sporting goods</option>
+                           <option value="Virtual reality">&nbsp;&nbsp;&nbsp;&nbsp;Virtual reality</option>
+                           <option>Education</option>
+                           <option>Electronics</option>
+                           <option>Events & Entertainment</option>
+                           <option>FMCG Industry </option>
+                           <option>Fashion</option>
+                           <option>Film Industry </option>
+                           <option>Finance</option>
+                           <option>Gems & Jewellery</option>
+                           <option>Gym & Fitness</option>
+                           <option>Health Care</option>
+                           <option>Home Services</option>
+                           <option>Hospitals </option>
+                           <option>Hotel</option>
+                           <option>IT</option>
+                           <option>Insurance</option>
+                           <option value="Home Insurance">&nbsp;&nbsp;&nbsp;&nbsp;Home Insurance</option>
+                           <option>Logistics</option>
+                           <option>Music Industry </option>
+                           <option>Pharma</option>
+                           <option>Real Estate</option>
+                           <option>Retail</option>
+                           <option>Securities</option>
+                           <option>Television Industry </option>
+                           <option>Tourism</option>
+                           <option>Travel</option>
+                           <option>Travel & Tourism</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="col-sm-4">
+                     <div class="form-group">
+                        <label for="location">Domain</label>
+                        <select id="domain" name="domain" class="form-control select2" data-placeholder="Domain">
+                           <option value="abc.com">abc.com</option>
+                           <option value="sheenz.in">sheenz.in</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="col-sm-4">
+                     <div class="form-group">
+                        <label for="device">Device</label>
+                        <select id="device" name="device" class="form-control select2" data-placeholder="Device">
+                           <option value="Android">Android</option>
+                           <option value="iPhone">iPhone</option>
+                           <option value="Wap">Wap</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="col-sm-4">
+                     <div class="form-group row">
+                        <div class="col-sm-12 col-xs-12">
+                           <span class="clearfix" style="font-size:12px;margin-bottom:5px;display:block">Added</span>
+                           <input type="text" id="created">
+                        </div>
+                     </div>
+                     <input type="hidden" name="co_type" value="">
+                  </div>
+                  <div class="col-sm-4">
+                     <div class="form-group row">
+                        <div class="col-sm-12 col-xs-12">
+                           <span class="clearfix" style="font-size:12px;margin-bottom:5px;display:block">By Days Opener</span>
+                           <input type="text" id="view">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-4">
+                     <div class="form-group row">
+                        <div class="col-sm-12 col-xs-12">
+                           <span class="clearfix" style="font-size:12px;margin-bottom:5px;display:block">By Days Clicker</span>
+                           <input type="text" id="click">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-4">
+                     <div class="form-group row">
+                        <div class="col-sm-12 col-xs-12">
+                           <span class="clearfix" style="font-size:12px;margin-bottom:5px;display:block">By Hours Opener</span>
+                           <input type="text" id="view_h">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-4">
+                     <div class="form-group row">
+                        <div class="col-sm-12 col-xs-12">
+                           <span class="clearfix" style="font-size:12px;margin-bottom:5px;display:block">By Hours Clicker</span>
+                           <input type="text" id="click_h">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-4">
+                     <div class="form-group">
+                        <button class="btn btn-primary waves-effect waves-light" type="submit" name="search_data" id="search_data" title="Search">Search</button>
+                        <button class="btn btn-primary waves-effect waves-light" type="button" name="search_save" id="search_save" data-toggle="modal" data-target=".bs-example-modal-sm" title="Save Segment">Save</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-12 text-right">
+               <span id="advance-button">Advance Search </span>
+            </div>
+         </div>
+      </section>
+      <script>
+         $(document).ready(function(){
+           $("#advance-button").click(function(){
+             $("#advance-search").toggle();
+           });
+         });
+      </script>
+   </body>
+</html>

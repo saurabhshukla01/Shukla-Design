@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student form</title>
+    <style>
+        body {
+          background-color: skyblue;
+          color:white;
+          }
+          p{
+          color : black;
+          }
+    </style>
+</head>
+<body>
+<form action="show-student" method="POST">
+    {% csrf_token %}
+
+    <center><h3><u> Student Form </u></h3></center>
+    <label>
+        First Name : <br>
+        <input type="text" name="fname"><br>
+    </label>
+    <label>
+        Last Name : <br>
+        <input type="text" name="lname"><br>
+    </label>
+    <label>
+        Email : <br>
+        <input type="email" name="email"><br>
+    </label>
+    <lebel>
+        Profile Image : <br>
+        <input type="file" name="file"><br>
+    </lebel>
+    <label>
+        Username : <br>
+        <input type="text" name="username"><br>
+    </label>
+    <label>
+        Password : <br>
+        <input type="password" name="pwd"><br>
+    </label>
+    <label>
+        Confirm Password : <br>
+        <input type="password" name="cpwd"><br><br>
+    </label>
+    <label><input type="submit" value="submit"></label>
+</form>
+
+
+</body>
+</html>

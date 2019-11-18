@@ -1,0 +1,74 @@
+{% extends 'header.html' %}
+    {% block title %}Add Student{% endblock %}
+{% block CSS %}
+        body{
+        background-color:lightgreen;
+        color:blue;
+        }
+        h2{
+        color:black;
+        }
+.container .image{
+float:right;
+width:30%;
+height:80px;
+position:absolute;
+top:150px;
+right:25px;
+}
+.container .student_form{
+margin-left:40px;
+margin-top:25px;
+float:right;
+width:70%;
+height:80px
+font-size:20px;
+font-family:cursive;
+position:absolute;
+top:120px;
+left:80px;
+}
+
+{% endblock %}
+{% block body %}
+{% load static %}
+
+<center><h2><u>Add Student Profile</u></h2></center>
+<div class="container">
+    <div class="image">
+        <img src="{% static 'photos/profile.jpg' %}" alt="profile" style="width:250px; height:250px;">
+    </div>
+    <div class="student_form">
+        <form action="addstudent" method="POST">
+        {% csrf_token %}
+            <level>
+                Username : <br>
+                <input type="text" name="username" placeholder="Enter Full Name"><br>
+            </level>
+            <level>
+                DOB : <br>
+                <input type="date" name="dob" placeholder="Enter Date Of Birth"><br>
+            </level>
+            <level>
+                Email : <br>
+                <input type="email" name="email" placeholder="Enter Email Address"><br>
+            </level>
+            <level>
+                Password : <br>
+                <input type="password" name="pwd" placeholder="Enter Password"><br>
+            </level>
+            <level>
+                User Profile : <br>
+                <input type="file" name="profileImage"><br><br>
+            </level>
+            <level>
+                <input type="submit" value="Log In">
+                <input type="reset" value="reset">
+            </level>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+{% endblock %}

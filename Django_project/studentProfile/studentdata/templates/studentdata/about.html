@@ -1,0 +1,64 @@
+{% extends 'header.html' %}
+{% block title %} About Student {% endblock %}
+{% block CSS %}
+    body{
+        background-color:red;
+        color:white;
+        }
+    h2{
+        color:black;
+        }
+    .container .image{
+        float:right;
+        width:25%;
+        height:80px;
+        position:absolute;
+        top:150px;
+        right:20px;
+        }
+    .container .profile{
+        margin-left:40px;
+        margin-top:25px;
+        float:right;
+        width:75%;
+        height:80px
+        font-size:20px;
+        font-family:cursive;
+        position:absolute;
+        top:100px;
+        left:40px;
+        }
+{% endblock %}
+{% block body %}
+{% load static %}
+
+<center><h2><u>Student About Profile</u></h2></center>
+<div class="container">
+    <div class="image">
+        <img src="{% static 'photos/student.png' %}" alt="student" style="width:250px; height:250px;">
+    </div>
+    <div class="profile">
+        <strong style="color:yellow;">PNG images: Student (Rahul kumar)</strong>
+        ===============================================
+        <p>
+        A student or pupil is a learner or someone who attends an educational institution. In Britain, those attending <br>
+        university are termed "students". In the United States, and more recently also in Britain, the term "student" <br>
+        is applied to both categories: school and university students. In its widest use, student is used for anyone who<br>
+        is learning, including mid-career adults who are taking vocational education or returning to university. When speaking <br>
+        about learning outside an institution, "student" is also used to refer to someone who is learning a topic or who is <br>
+        "a student of" a certain topic or person. In the widest sense of the word, a student is anyone seeking to learn or to <br>
+            grow by experience, such as a student of the School of Hard Knocks.</p>
+        <p>A mature, non-traditional, or adult student in tertiary education (at a university or a college) is normally <br>
+            classified as an (undergraduate) student who is at least 21–23 years old at the start of their course and usually<br>
+            having been out of the education system for at least two years. Mature students can also include students who have<br>
+            been out of the education system for decades, or students with no secondary education. Mature students also make up
+            graduate and postgraduate populations by demographic of age.</p>
+
+        <p>In this page you can download free PNG images: Student PNG images free download.</p>
+
+        <p>In this gallery "Student" we have 227 free PNG images with transparent background.</p>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+{% endblock %}

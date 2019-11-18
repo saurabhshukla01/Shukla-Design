@@ -1,0 +1,357 @@
+*****  main-look site ==>>  render.gg (looking good feel) *****
+1) https://www.phptpoint.com/projects/
+2) https://www.phptpoint.com/php-introduction/
+3) https://www.pexels.com/search/banner%20background/
+4) https://unsplash.com/backgrounds/apps/website
+5) https://colorlib.com/wp/templates/
+6) https://getbootstrap.com/docs/4.0/examples/
+7) http://designer.sheenz.in/sourabh/Gogetscore/profile.html
+8) https://templates.office.com/en-in/templates-for-word
+9) https://templates.office.com/#categories
+10) https://www.codeply.com/go/KrUO8QpyXP
+11) https://bootsnipp.com/tags/profile/4
+12) https://demos.creative-tim.com/argon-dashboard/index.html
+13) https://www.creative-tim.com/product/argon-dashboard?partner=114912
+14) http://bootstrap4.guide/
+15) https://fontawesomeicons.com/
+	
+								============	Workbanch of Prudigital.in   ===========
+As Designer link -->
+
+http://designer.sheenz.in/sourabh/
+http://designer.sheenz.in/sourabh/
+
+`````````````````````````````````````````````````````````````````````````````````````````````````
+https://tutorialdeep.com/bootstrap/bootstrap-table/
+https://github.com/saurabhshukla01/
+http://sms.sheenz.in/templete_html/template/app/template/index.html
+http://sms.sheenz.in/template_implementation/
+https://admin.sms1.in/index.php?Act=contactlist
+http://sms.sheenz.in/template_implementation/template/app/template/index4.html
+
+`````````````````````````````````````````````````````````````````````````````````````````````````
+http://sms.sheenz.in/template_implementation/template/app/template/index4.html
+http://sms.sheenz.in/template_implementation/template/app/template/conversion-reports.html
+
+
+````````````````````````````````````````````````````````````````````````````````````````````````````````````
+https://tutorialdeep.com/bootstrap/bootstrap-table/
+
+###############################################################################################################
+Sms design UI Interface design Implementions ...
+--------------------------------------------------
+urls sms == >>   https://admin.sms1.in/index.php?Act=addapi&pp=12
+username == >>  ziplock2
+Password == >> T7Q435smSi@ds$
+
+
+``````````````````````````````````````````````````````````````````````````````````````````````````````````````
+show url templates  ==>>   http://sms.sheenz.in/template_implementation/
+show url html files ==>>   http://sms.sheenz.in/template_implementation/template/app/template/index.html
+SMS Design folder ftp ==>>
+---------------------------------------------------------------------------------------------------------------
+
+FTP Username: template@sms.sheenz.in
+FTP server: ftp.sms.sheenz.in
+FTP password: template@123456
+
+````````````````````````````````````````````````````````````````````````````````````````````````````````
+# Bootstrap table responsive tutorial ..  
+https://tutorialdeep.com/bootstrap/bootstrap-table/
+
+```````````````````````````````````````````````````````````````````````````````````````````````````````
+free datatable in react.js (frontend devloper) ..
+https://mdbootstrap.com/docs/react/tables/datatables/
+
+`````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+Sms database ==>>
+------------------------------------
+database -->>
+
+urls --->>  sms.shneez.in/db.php
+username ==>>  sms_usr
+password ==>>  Prudigital@@123
+Database ==>>  sms_db
+
+-------------------------------------
+===============================================================================================================
+
+http://sms.sheenz.in/templete_html/template/app/template/index.html
+
+===============================================================================================================
+https://demo.w3layouts.com/demos_new/template_demo/31-08-2019/match_fix-demo_Free/103107357/web/index.html
+Bootstarp templates --..
+
+=========================================================================================================
+Live Ftp petition ===>>
+-----------------------------
+
+FTP Username: petitionftp@petition.sheenz.in
+FTP server: ftp.petition.sheenz.in
+FTP Password : petition@321
+
+=======================================================================================================
+Bootstarp layout templates  ==>>
+
+https://w3layouts.com/
+
+Bootstarp latest templates ===>>
+
+https://colorlib.com/wp/templates/
+
+=======================================================================================================
+Bootstarp admin panel ==>>
+----------------------------------
+
+file:///C:/Users/Sourabh/AppData/Local/Temp/Rar$EXa17732.6043/Sample%20Admin%20Template/index.html
+
+=============================================================================================
+https://github.com/orgs/Prudigital-media-pvt-ltd/people
+https://sourceforge.net/projects/orangehrm/
+https://sourceforge.net/blog/
+https://sourceforge.net/
+
+Orange_hrm source code ==>>
+github-orangeHRM account ..
+username ==> saurabh24111996
+email ==> saurabh.shukla@prudigital.in
+password ==>  SaurabhShukla@123
+===========================================================================================
+
+new project 5 --  (9/oct/2019)
+urls ==>
+
+----------------------------------------------
+admin panel petition (callupon.org) ..
+----------------------------------------------
+http://admin.petition.sheenz.in/auth/login
+username ==:  kumarlove630@gmail.com
+password ==:  @54321
+--------------------------------------------
+
+(live project link )..
+----------------------------------------------
+https://callupon.org/    
+============================================================================================
+
+Go language -->>
+
+https://golang.org/doc/install?download=go1.13.1.windows-amd64.msi
+
+-------------------------------------
+
+Account fraud ===>>
+
+email -->  kv002021@gmail.com , kv0002021@gmail.com
+passw -->  Saurabh@123 , Saurabh@1234
+
+----------------------------------
+
+facebook account ===>>
+
+fb account  -->  kv002021@gmail.com , kv0002021@gmail.com
+passw -->  Saurabh@123 , Saurabh@1234
+
+
+-----------------------------------------------
+twitter devloper app -  username and password .
+username-@shuklas36627449
+pass-Saurabh@123
+
+------------------------------------------------
+
+@saurabh72451804
+pass- Saurabh@123
+
+-------------------------------------------------
+-----------------------------------------------------------------
+python project -->>
+
+http://185.64.106.145:8000/admin
+username ==>  admin
+pass ==>  123456
+
+---------------------------------
+show use -->
+http://185.64.106.145:8000/shop
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+live loans site -->>
+======================
+http://loans.ezeerupee.com/
+
+
+------------------------------------------------------------------------------------------------------------------
+
+link --->>
+
+http://petition.sheenz.in/
+devlopment server link --->>
+
+HostName :ftp.petition.sheenz.in
+User :petitionftp@petition.sheenz.in
+Pass : Prudigital@1234
+
+
+----------------------------------------------------
+
+http://petition.sheenz.in/db.php
+
+DB Details
+petition_db
+petition_usr
+Prudigital@1234
+
+
+
+HostName :ftp.petition.sheenz.in
+User :petitionftp@petition.sheenz.in
+Pass : Prudigital@1234
+
+
+===================================================================================================================
+
+page ===>>
+https://www.change.org/start-a-petition?step=ask&source_location=homepage_large_button
+
+--------------------------------------------------------------------------------
+local id , TwiterAccount  , Facebook Account  ==>>   nelsonkumar2025@gmail.com
+password ==>>  Tiger@4321
+--------------------------------------------------------------------------------
+
+
+=======================================================================================
+
+url == > http://heysend.sheenz.in/client/auth/login
+username == >  akshay.sharma@gmail.com
+
+password == > 12345678
+
+=====================================================================================													==================================
+When using mysql in local server then stop the "Services.msc"> stop> then using XXAMMP controler then use the mysql in local host .....
+
+===============================================================================
+
+
+CRM LOGIN -----
+
+http://crm.sheenz.in/auth/login
+kumarlove630@gmail.com	
+@54321
+
+==============================================================================
+
+Create flow chart link ....
+
+https://www.draw.io/
+
+===============================================================
+design link --->>
+
+http://designer.sheenz.in/sourabh/
+
+++++++++++++++++  orangeHRM setup +++++++++++++++++++++++++++++
+start Xampp-controlar ==>>>
+http://localhost/orangehrm-4.3.3/symfony/web/index.php/auth/login
+
+Username :  Admin
+password :  OrangeHRM@1234
+
++++++++++++++++++++++++++++++++++++++++++++++
+
+===========================================================================================================================
+project - 1 )   gogetscore  ftt server  .....
+live project link ==> https://apps.gogetscore.com/
+
+https://apps.gogetscore.com/
+
+design purpose link ==>  1) http://designer.sheenz.in/sourabh/Gogetscore/credit-score.html 
+						2)  http://designer.sheenz.in/sourabh/Gogetscore
+
+
+Local server (devlopment server ... )
+local devlopment link show all website performation .... ??
+=============     http://gogetscore.sheenz.in/
+
+devlopment serevr ===>>  http://gogetscore.sheenz.in/
+
+FTP Username: development@gogetscore.sheenz.in
+FTP server: ftp.gogetscore.sheenz.in
+FTP Password: Gogetscore@@1234
+
+show database gogetscore ====  
+url ==>>  =============   show database link .....
+database check link == >   http://gogetscore.sheenz.in/db.php
+
+information db ...
+'username' => 'goget_usr',
+'password' => 'Prudigital@1234',
+'database' => 'goget_score_db',
+
+===========================================================================================================================
+project -2 )  Heysend  ftp server  .....
+
+live project link ==> http://heysend.in
+
+design purpose link ==>   http://heysend.sheenz.in/admin/clients
+information == >>
+username : kumarlove630@gmail.com
+Password : @54321
+
+
+devlopment link =  http://heysend.sheenz.in/admin/auth/login
+admin user =  admin@gmail.coms
+admin password = @54321
+reseller user = reseller@gmail.com
+reseller password = @54321
+
+
+server devlopment link = http://heysend.sheenz.in
+
+FTP Username: develop@heysend.sheenz.in
+FTP server: ftp.heysend.sheenz.in
+FTP Password : Heysend@@1234
+
+
+
+=============   show database link .....
+database check link == >   http://heysend.sheenz.in/db.php
+
+information db ...
+'username' => 'hey_usr',
+'password' => 'Prudigital)(*123',
+'database' => 'hey_db',
+
+
+==============================================================================================================================
+project - 3 )   Python ftp server .....
+
+FTP Username: user@python.sheenz.in
+FTP Password: Python@123456
+FTP server: ftp.python.sheenz.in
+
+
+
+
+
+
+
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+service.msc ==>  mysql ko running service suru krni hai ok ...
+
+if xxamp chla rhe hai to mysql bnd krna pdega ....
+
+--------------------------------------------------
+mysql password on local server ==>>
+
+        'USER': 'root',
+        'PASSWORD': 'Abc@1234',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+
+-------------------------------------------------
+=======================================================================================================================

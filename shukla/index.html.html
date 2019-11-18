@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+    #edit-text{
+      position: absolute;
+    }
+    #preview-text{
+      position: relative;
+      top:60%;
+      left:40%;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="col-md-4" id="edit-text">
+    <div class="editable-textarea">
+      <form>
+          <div class="form-group">
+            <label for="Text-Input">Input</label>
+            <input type="text" class="form-control" id="" placeholder="Hello">
+          </div>
+          <div class="form-group">
+            <label for="Sms-Option">SMS Option</label>
+            <select class="form-control" name="sweets" id="select">
+                <option value="sms">SMS</option>
+                <option value="mobile">Mobile</option>
+                <option value="whatsapp">Whatsapp</option>
+                <option value="message">Message</option>
+                <option value="email">Email</option>
+                <option value="telegram">Telegram</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control preview-type" rows="3" id="input1" placeholder="type here..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+  </div>
+
+  <div class="col-md-8" id="preview-text">
+    <form>
+      <span class="show-content"></span>
+        <!--<h6 class="pt-3 m-2">Message</h6>-->
+        <div class="form-group">
+          <textarea class="form-control input1 border" rows="10" id="" readonly=""></textarea>
+        </div>
+    </form>
+</div>
+
+<script>
+$( "select" )
+  .change(function () {
+    var str = "";
+    $( "select option:selected" ).each(function() {
+      str += $( this ).text() + " ";
+    });
+    $( ".show-content" ).text( str );
+  })
+  .change();
+</script>
+<script>
+  $('.preview-type').keyup(function(){
+   var $this = $(this);
+   $('.'+$this.attr('id')+'').html($this.val());
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+					# All Command lines ====
+                                       ==========================
+
+===================================================================================================================
+Mysql path == >>     C:\Program Files\MySQL\MySQL Server 8.0\bin
+1) Database_name = test_1
+	
+VS codeC++ 2019 install 
+pip install pymysql
+pip install mysql-pyton 
+pip install wheel
+pip install mysqlclient-1.4.4-cp37-cp37m-win32.whl
+create database 'database_name'
+Authentication purpose == >>
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Abc@1234';
+Name: "Database name" in settings.py
+
+===================================================================================================================
+Install Python 3.7.4
+pip upgrade
+$ python -m pip upgrade pip 
+$ pip install django
+===================================================================================================================
+create project in Django ...
+$ django-admin startproject project_name 
+$ cd project_name
+$ py manage.py startapp appname 
+$ py manage.py runserver
+$ pip install Pillow   (for image field)
+$ py manage.py makemigrations
+$ py manage.py migrate
+$ py manage.py createsuperuser
+$ filetration command run === ??? 
+===================================================================================================================
+

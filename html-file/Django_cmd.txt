@@ -1,0 +1,8 @@
+										scripts on cmd command  .....
+										=============================
+
+cmd > python -m django --version   (2.2.5)
+cmd > python --version   (Python 3.7.4)
+cmd > django-admin startproject projectname
+
+

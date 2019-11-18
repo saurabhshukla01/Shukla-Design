@@ -1,0 +1,89 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#openBtn').click(function () {
+                $('#myModal').modal('show');
+            });
+            $("[id*=ddlCountries]").bind('change', function () {
+                $('[id*=lblSelectedCountry]').html($(this).val());
+                $('#myModal').modal('hide');
+            });
+            $('[id*=myModal2] [id*=btnClose]').bind('click', function () {
+                $('#myModal').modal('hide');
+            });
+        });
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <a data-toggle="modal" href="#myModal" class="btn btn-primary">Launch modal</a>
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            ×</button>
+                        <h4 class="modal-title">
+                            Modal title</h4>
+                    </div>
+                    <div class="container">
+                    </div>
+                    <div class="modal-body">
+                        Content for the dialog / modal goes here.
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <a data-toggle="modal" href="#myModal2" class="btn btn-primary">Launch modal</a>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" data-dismiss="modal" class="btn">Close</a> <a href="#" class="btn btn-primary">
+                            Save changes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="myModal2" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            ×</button>
+                        <h4 class="modal-title">
+                            Second Modal title</h4>
+                    </div>
+                    <div class="container">
+                    </div>
+                    <div class="modal-body">
+                        Content for the dialog / modal goes here.<br />
+                        <br />
+                        Select Country :
+                        <select name="ddlCountries" id="ddlCountries">
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" id="btnClose" data-dismiss="modal" class="btn">Close</a> <a href="#"
+                            class="btn btn-primary">Save changes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        Selected Country :
+        <label id="lblSelectedCountry">
+        </label>
+    </div>
+    </form>
+</body>
+</html>
+

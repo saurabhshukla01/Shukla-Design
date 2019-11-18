@@ -1,0 +1,248 @@
+                                                       -----      project step     ---------    = >>>
+
+python 3.7.4 download 
+upgrade pip
+$ python -m pip upgrade pip 
+$ pip install Django
+add django path in environment varriable =>   this pc > right click > properties > advance system settings > environment varriable > path > edit > new >
+c:\Users\Sourabh\AppData\Roaming\Python\Python37\site-packages\django\bin  > ok ....
+$ django-admin (check django working ...)
+===============================================
+Start project in django == > 
+$ django-admin Startproject projectname       
+Start project == open project (go to project path )
+$ cd projectname
+$ py manage.py runserver  (check server is running)
+cmdpromt - url copy and paste broweser -- >     http://127.0.0.1:8000/
+create app in project  ==  >
+$ py manage.py startapp appname
+go to settings.py file in projectname 
+''' 
+projectname > settings.py 
+INSTALLED_APPS=[
+{
+'appname',
+}
+]
+'''
+registered appname in 'INSTALLED_APPS' directory ..
+after app register 
+
+
+cd appname > create (urls.py) file
+projectname > urls.py -  include appname url
+1) add library ==  from django.urls import path , include
+	path('student_formapp/', include('student_formapp.urls'))
+	
+appname > urls.py 
+from django.urls import path
+from . import views
+urlpatterns = [
+    path("", views.register , name="registerform"),
+
+]
+
+appname > views.py 
+2) add library ==  from django.http import HttpResponse
+$ py manage.py runserver
+url == >>   http://127.0.0.1:8000/student_formapp/
+
+
+=============================================================
+
+create tempaltes folder inside appname folder
+and register templates dir in settings.py file 
+'''
+cd projectname > settings.py 
+TEMPLATES=[
+{
+'DIRS': ['templates'],
+}
+]
+'''
+
+
+===================================================================================================================================================
+
+register student forms filled user dynamic filled input data show to another page ==>>
+
+user register student form all fields ..
+show her name , firstname , lastname , email , username , imagepath ....  another page show-student url.
+
+
+
+files ... >>
+
+1) projectname > urls.py 
+
+from django.contrib import admin
+from django.urls import path , include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('student_formapp/', include('student_formapp.urls')),
+
+]
+
+2) projectname > settings.py 
+
+
+INSTALLED_APPS = [
+    'appname',
+]
+
+TEMPLATES = [
+    {
+        'DIRS': ['templates'],
+    }]
+	
+	
+	
+3) appname > slef_create urls.py 
+
+from django.urls import path
+from . import views
+urlpatterns = [
+    path("student-register", views.register_student , name="student_register"),
+    path("show-student",views.show_student , name="show-student")
+
+]
+
+
+4) appname > views.py
+
+from django.shortcuts import render
+from django.http import HttpResponse
+# Create your views here.
+'''
+def register(request):
+    return HttpResponse('index form')
+'''
+def register_student(request):
+    return render(request,'register_student.html')
+def show_student(request):
+    stu_dict ={}
+    stu_fname= request.POST.get('fname')
+    stu_lname= request.POST.get('lname')
+    stu_email= request.POST.get('email')
+    stu_image= request.POST.get('file')
+    stu_username= request.POST.get('username')
+    password= request.POST.get('pwd')
+    confirm_password= request.POST.get('cpwd')
+    stu_dict = {'first_name' : stu_fname, 'last_name' :stu_lname , 'email' : stu_email , 'image_path' : stu_image ,
+                'username' : stu_username }
+    return render(request,'show_student.html',stu_dict)
+	
+	
+	
+5) appname > templates folder > register_student.html files
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student form</title>
+    <style>
+        body {
+          background-color: skyblue;
+          color:white;
+          }
+          p{
+          color : black;
+          }
+    </style>
+</head>
+<body>
+<form action="show-student" method="POST">
+    {% csrf_token %}
+
+    <center><h3><u> Student Form </u></h3></center>
+    <label>
+        First Name : <br>
+        <input type="text" name="fname"><br>
+    </label>
+    <label>
+        Last Name : <br>
+        <input type="text" name="lname"><br>
+    </label>
+    <label>
+        Email : <br>
+        <input type="email" name="email"><br>
+    </label>
+    <lebel>
+        Profile Image : <br>
+        <input type="file" name="file"><br>
+    </lebel>
+    <label>
+        Username : <br>
+        <input type="text" name="username"><br>
+    </label>
+    <label>
+        Password : <br>
+        <input type="password" name="pwd"><br>
+    </label>
+    <label>
+        Confirm Password : <br>
+        <input type="password" name="cpwd"><br><br>
+    </label>
+    <label><input type="submit" value="submit"></label>
+</form>
+
+
+</body>
+</html>
+
+
+6) appname > tempaltes folder > show_student.html file
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Student</title>
+    <style>
+        body {
+          background-color: lightblue;
+          }
+          p{
+          color : red;
+          }
+    </style>
+</head>
+<body>
+<center><u><h3>Show Student Detail</h3></u></center>
+<label>Student First Name : <br> <p>{{first_name}}</p></label><br>
+<label>Student Last Name : <br> <p>{{last_name}}</p></label><br>
+<label>Student Email : <br> <p>{{email}}</p></label><br>
+<label>Student Profile  : <br> <p>{{image_path}}</p></label><br>
+<label>username : <br> <p>{{username}}</p></label>
+</body>
+</html>
+
+
+
+
+
+
+
+
+================================================================================================================================================
+
+											OUTPUT of Student Form & show details fill by users input type ==>
+											
+fill form this url :   http://127.0.0.1:8000/student_formapp/student-register
+show deltails this url : http://127.0.0.1:8000/student_formapp/show-student
+
+	
+===========================================****************************************************==========================================================
+
+
+when customized the text editor ....??
+
+cmd >  $ pip install django-tinymce
+
+
+
+
+

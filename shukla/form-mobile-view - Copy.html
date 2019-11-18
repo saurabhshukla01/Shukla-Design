@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Nav mobile popup</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://shukla.sheenz.in/shukla/css/mobile.css">
+  <style>
+
+  </style>
+</head>
+<body>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Mobile Button
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+     
+      <!--<div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        
+      </div>-->
+      <div class="modal-body">
+        
+
+        <div class="mobile-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+          <header>
+            <div class="Header row">
+              <div class="col-md-4 pt-4 text-left">
+                <small>10:40<span>AM</span></small>
+              </div>
+              <div class="col-md-8 pt-4 text-right">
+                <small>0.2kb/s<i class="fa fa-clock"></i>&nbsp;<i class="fa fa-clock-o"></i>&nbsp;<i class="fa fa-signal"></i>&nbsp;<i class="fa fa-battery"></i>&nbsp;90%</small>
+              </div>
+              </div>
+            </header>
+          <form>
+            <span class="show-content"></span>
+            <!--<h6 class="pt-3 m-2">Message</h6>-->
+          <div class="form-group">
+            <textarea class="form-control input1 border" rows="10" id="" readonly=""></textarea>
+          </div>
+        </form>
+
+      </div>
+
+
+
+    <div class="editable-textarea">
+      <form>
+          <div class="form-group">
+            <label for="Text-Input">Input</label>
+            <input type="text" class="form-control" id="" placeholder="Hello">
+          </div>
+          <div class="form-group">
+            <label for="Sms-Option">SMS Option</label>
+            <select class="form-control" name="sweets" id="select">
+                <option value="sms">SMS</option>
+                <option value="mobile">Mobile</option>
+                <option value="whatsapp">Whatsapp</option>
+                <option value="message">Message</option>
+                <option value="email">Email</option>
+                <option value="telegram">Telegram</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control preview-type" rows="3" id="input1" placeholder="type here..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+
+
+      </div>
+<!--      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>-->
+    </div>
+  </div>
+</div>
+<script>
+$( "select" )
+  .change(function () {
+    var str = "";
+    $( "select option:selected" ).each(function() {
+      str += $( this ).text() + " ";
+    });
+    $( ".show-content" ).text( str );
+  })
+  .change();
+</script>
+<script>
+  $('.preview-type').keyup(function(){
+   var $this = $(this);
+   $('.'+$this.attr('id')+'').html($this.val());
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+----------------------------------------------------------------------------------------------------------
+{% extends "public/base.html" %}
+
+<h1>Content goes here</h1>
+
+
+<html>
+    <body>
+        <!-- header code -->
+        {% block content %}
+        {% endblock %}
+        <!-- footer code -->
+    </body>
+<html>
+
+----------------------------------------
+
+{% extends "base.html" %}
+{% block content %}
+    <!-- Content here -->
+{% endblock %}
+
+
+-----------------------------------------
+

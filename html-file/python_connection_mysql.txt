@@ -1,0 +1,16 @@
+                                           create connection mysql in python ==>>
+                                           ======================================
+
+import pymysql
+cnx = pymysql.connect(user='root', password='Abc@1234',
+                              host='127.0.0.1',
+                              database='email_verify')
+cur = cnx.cursor()
+	// query ==>>>>>>>>
+	
+	sql = "insert into student_email (Email_id) values ('"+str(i)+"')"
+	cur.execute(sql)
+	cnx.commit()
+	
+
+cnx.close()

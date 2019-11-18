@@ -1,0 +1,174 @@
+                            link  1 ==>>  http://books.agiliq.com/projects/django-admin-cookbook/en/latest/
+                            link  2 ==>>  https://www.webforefront.com/django/admincustomlayout.html
+                            link  3 ==>>  https://docs.djangoproject.com/en/2.2/howto/overriding-templates/
+                            link  4 ==>>  https://stackoverflow.com/questions/42416396/django-1-10-base-site-html-override-not-working  
+
+
+
+=================================================================================================================================\
+
+
+Django admin custom page layout, data & behaviors
+In addition to the Django admin class options described in previous sections, there are multiple ways to customize the layout, data and behaviors of Django admin pages. You can customize certain global values used across all Django admin pages without the need to modify any Django template. But in addition, it's also possible to customize any template used by a Django admin page -- like the log in, log out, password update, display record and create/update/delete record page -- to alter its layout (e.g. modify the default blue CSS skin or component positions in the page).
+
+Finally, it's also possible to customize the data passed to Django admin pages, as well as modify the default behavior run by Django admin pages (e.g. CRUD actions) by means of methods and fields declared as part of a Django admin class.
+
+Django admin custom global values for default templates
+By default, the Django admin is configured as part of a Django project's urls.py file, as shown in the following snippet:
+
+from django.conf.urls import url
+from django.contrib import admin
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+]
+While admin.site.urls -- from the django.contrib package -- lets you set up the Django admin on the /admin/ url, the same django.contrib.admin.site object also allows you to customize certain values used by all Django admin pages.
+
+Listing 11-22 illustrates how to customize several Django admin fields through the django.contrib.admin.site object.
+
+Listing 11-22. Django admin django.contrib.admin.site object to customize fields
+from django.conf.urls import url
+from django.contrib import admin
+
+admin.site.site_header = 'Coffeehouse admin'
+admin.site.site_title = 'Coffeehouse admin'
+admin.site.site_url = 'http://coffeehouse.com/'
+admin.site.index_title = 'Coffeehouse administration'
+admin.empty_value_display = '**Empty**'
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+]
+Tip It's also possible to define the custom admin field values in listing 11-22 inside the settings.py file. Simply import django.contrib.admin and declare the admin fields to centralize them with other custom configurations in settings.py.
+As you can see in listing 11-22, before declaring admin.site.urls as a url statement, there are a series of declarations on the admin.site object that are also part of the django.contrib package:
+
+admin.site.site_header.- Defines the title used across all Django admin pages (e.g. in the navy blue header and login page). See figure 11-45 and figure 11-46.
+admin.site.site_title.- Defines the title used across all Django admin pages, as part of the HTML title. See figure 11-45 and figure 11-46.
+admin.site.site_url.- Defines the domain (e.g. coffeehouse.com) to use as part of the Django admin 'View site' link, to easily access the live site from the Django admin. See figure 11-45.
+admin.site.index_title.- Defines the title of the main Django admin page. See figure 11-45.
+admin.empty_value_display.- Defines the default value to display when a Django admin model value is empty.
+
+Figure 11-45. Django admin main index with custom global values
+
+Figure 11-46. Django admin log in page with custom global values
+As you can see figures 11-45 and 11-46, with a few simple statements like the ones listing 11-22, you can customize the Django admin template content, without the need to interact with templates or HTML.
+
+It's worth noting the admin.empty_value_display option described in listing 11-22 is applied to all Django admin models when a record field contains an empty value. Examples of the admin.empty_value_display option were described earlier in this chapter in the 'Record Display' section, specifically in figure 11-5 and figure 11-6, as well as listing 11-5.
+
+
+ 
+Django admin custom page layout with custom templates
+Although the django.contrib.admin.site object options presented in listing 11-22 offer a quick way to customize Django admin pages, they can fall short in the face of more sophisticated requirements, in which case you must rely on custom templates.
+
+The default templates used by the Django admin are located under the /django/contrib/admin/templates/ directory of your Django installation inside your operating system's or virtual env Python environment (e.g. <virtual_env_directory>/lib/python3.5/site-packages/django/contrib/admin/templates/).
+
+Similar to the Django template customization techniques described in previous chapters (e.g. Django form widgets, Django allauth), you can create a copy of these default templates and place them inside your project. In this manner, the templates inside a project take precedence over the default Django admin templates, where you can customize the project templates to fit your needs.
+
+The Django admin /django/contrib/admin/templates/ directory contains two template folders: admin and registration. Copy them to a project directory that's part of a DIRS folder of the TEMPLATES/DIRS variable in settings.py.
+
+Tip See the book's accompanying source code which includes the layout of all Django admin templates.
+All the Django admin templates inherit their behavior from the admin/base_site.html template, which itself inherits its behavior from the admin/base.html template. If you're unfamiliar with how Django template inheritance works, look over Chapter 3 which describes this topic.
+
+If you open the admin/base.html template, you can see the core structure behind every Django admin page, such as: the HTML <head> section (e.g. CSS files, meta tags), navigation header and message notification block, among other things. Therefore, you can modify the admin/base.html template to include custom CSS or JavaScript files to alter the 'look & feel' of every Django admin page.
+
+In addition to the admin/base.html template, there are many other templates inside the admin and registration directories whose functions are escribed in the following list:
+
+admin/404.html and admin/500.html.- Defines the layout for Django admin not found and error pages (i.e. HTTP 404 and HTTP 500), respectively.
+admin/index.html.- Defines the layout for Django admin index pages, on the main page -- shown in figure 11-45 -- as well as those for app indexes showing all models.
+admin/change_list.html.- Defines the layout for Django admin list pages, those used to read records, shown from figures 11-1 to 11-22.
+admin/change_form.html.- Defines the layout for Django admin form pages, those used to create, update and delete records, shown from figures 11-23 to 11-44.
+admin/login.html.- Defines the Django admin login page, shown in figure 11-46.
+registration folder.- Contains templates for the various Django admin page password change actions, as well as the Django admin logout page layout.
+Note Other pages in the admin folder not described in this list (e.g. filter.html, object_history.html) are more granular templates -- included as part of the larger templates in this list -- which you can customize as necessary.
+As you can see, by creating a copy of the Django admin templates and placing them in your project, you can fine tune the layout of every Django admin page by modifying its backing template.An important modular behavior worth mentioning about the Django admin index.html, change_list.html and change_form.html templates, is how they can be applied to individual Django admin apps or models.
+
+By default, if you provide a custom layout for the admin/index.html, admin/change_list.html or admin/change_form.html templates, these templates are used for all apps and models in the Django admin (i.e. globally). However, sometimes it can be necessary to customize Django admin index pages, list pages or form pages for only certain apps (e.g. stores app) or inclusively an individual model (e.g. Item model).
+
+To define a custom Django admin template for all models in an app, you can create a Django admin template and place it under the template path admin/<app_name>/ (e.g. admin/stores/change_list.html to define a change_list.html template for all stores app models).
+
+To define a custom Django admin template for a single model, you can create a Django admin template and place it under the template path admin/<app_name>/<model>/ (e.g. admin/items/item/change_list.html to define a change_list.html template to use on the Item model of the items app).
+
+Note Only the templates admin/index.html-admin/app_index.html, change_form.html, change_list.html, delete_confirmation.html, object_history.html and popup_response.html can be customized on a per app and per model basis.
+Django admin custom static resources
+If you customize the Django admin admin/base.html template in your project with custom CSS or JavaScript files, these static resources take effect on every Django admin page. While this can be a desired effect in certain circumstances, in other cases, it can be necessary to only apply custom static resources to certain Django admin pages.
+
+Django admin classes support the Media class to define both CSS and JavaScript files and include them on all pages associated with a given Django admin class. The advantage of using the Media class on a Django admin class, is that you don't need to deal with templates or HTML markup, with the Django admin automatically loading the static resources as part of every admin page linked to an admin class. Listing 11-23 illustrates a Django admin class that makes use of the Media class.
+
+Listing 11-23. Django admin class with Media class to define custom static resources.
+from django.contrib import admin
+from coffeehouse.items.models Item
+
+class ItemAdmin(admin.ModelAdmin):
+      list_per_page = 5
+      class Media:
+            css = {
+                "screen": ("css/items/items.css",)
+            }
+            js = ("js/items/items.js",)
+
+admin.site.register(Item, ItemAdmin)
+As you can see in listing 11-23, the Media class supports the css and js fields to declare both CSS and JavaScript static files,respectively. In the case of css, listing 11-23 declares a dictionary, where the key corresponds to the CSS media type and the value is a tuple with a CSS file. For the case of js, listing 11-23 declares a tuple pointing to a JavaScript file. All files declared as part of a Media class are automatically searched for in Django's static file directory paths -- as described in Chapter 5.
+
+The final outcome of listing 11-23 is that all Django admin pages associated with the ItemAdmin admin class (e.g. index.html, change_list.html, change_form.html) will include an additional CSS import statement (e.g. <link href="/static/css/items/items.css" type="text/css" media="screen" rel="stylesheet" />), as well as an additional JavaScript import statement (e.g. <script type="text/javascript" src="/static/js/items/items.js"></script>).
+
+It's worth pointing out that while you can include any 3rd party CSS or JavaScript library in a Django admin page (e.g. Bootstrap, D3), Django admin pages already include the popular jQuery 2.2 library under the django.jQuery namespace to fulfill certain functionalities. The Django admin uses a jQuery namespace, to let you import any other jQuery library version in Django admin pages without fear of conflict. If you want to leverage the included Django admin jQuery library for your own custom JavaScript, you must wrap your JavaScript logic in this namespace, as illustrated in the following snippet:
+
+(function($) {
+    // Custom JavaScript logic leveraging the Django admin built-in jQuery libray  
+    $(document).ready(function() {
+        $('.deletelink').on('click',function() {
+            if( !confirm('Are you sure you want to delete this record ?')) {
+                return false;
+            }
+        });
+    });
+})(django.jQuery); // <-- Note wrapping namespace
+As you can see in this last snippet, by wrapping your custom JavaScript logic in the django.jQuery namespace, it gains access to the Django admin built-in jQuery library (i.e. the custom JavaScript logic gains access to the jQuery $ scope).
+
+Grappelli project -- an out-of-the-box Django admin supplement
+If you want try a different 'look & feel' for the Django admin, without having to write custom templates or supporting CSS & JavaScript files, there are various Django apps designed for this purpose.
+
+One of the most popular apps is the 'Grappelli Project'[3].Grappelli uses the 'Compass' CSS authoring Framework to include additional Django admin features like: auto-complete, inline sortable 'drag & drop' and support for jQuery plugins, among other things.
+
+
+ 
+Django admin custom data and behaviors with admin class fields and methods
+Although the modification of Django admin templates allows you to generate any type of Django admin page layout, it can still fall short for cases where you need to include custom data in Django admin pages (e.g. add data from another model for reference) or override the default CRUD behaviors of Django admin pages (e.g. perform a custom audit trail for delete actions).
+
+Django admin classes like the ones you've written in this chapter since listing 11-1, rely on over two dozen fields -- all of which you explored in the previous sections in this chapter as Django admin read options & create/update/delete options -- and over three dozen methods[4] to define a Django admin page's default data and behaviors.
+
+In a very similar way to how you can customize the default behaviors and data used by Django class-based views -- described in Chapter 9 -- Django admin classes can also define their own custom fields and methods to override their default data and behaviors.
+
+The bulk of this chapter already covered all of the Django admin class fields to customize Django admin page behaviors, so I won't re-address them once again. However, I will provide examples of the most common Django admin class methods to illustrate how to add custom data and override other default behaviors in Django admin pages.
+
+Listing 11-24 illustrates a Django admin class that uses a custom implementation of the changelist_view() method -- which adds custom data to access in the underlying Django admin change_list.html template -- as well as a custom implementation of the delete_view() method -- to execute custom logic when a delete action is taken on a Django admin class.
+
+Listing 11-24. Django admin class with custom changelist_view() and delete_view() methods.
+from coffeehouse.stores.models import Store
+
+class StoreAdmin(admin.ModelAdmin):
+    search_fields = ['city','state']
+    def changelist_view(self, request, extra_context=None):
+        # Add extra context data to pass to change list template
+        extra_context = extra_context or {}
+        extra_context['my_store_data'] = {'onsale':['Item 1','Item 2']}
+        # Execute default logic from parent class changelist_view()
+        return super(StoreAdmin, self).changelist_view(
+            request, extra_context=extra_context
+        )
+    def delete_view(self, request, object_id, extra_context=None):
+        # Add custom audit logic here
+        # Execute default logic from parent class delete_view()
+        return super(StoreAdmin, self).delete_view(
+            request, object_id, extra_context=extra_context
+        )
+admin.site.register(Store, StoreAdmin)
+As you can in listing 11-24, both the changelist_view() and delete_view() methods are declared inline with the Django admin search_fields option you learned earlier. In this case, the changelist_view() method in listing 11-24 is triggered whenever you visit the list view page of the Store model in the Django admin (e.g. illustrated in figure 11-10). Notice the changelist_view() method adds a custom value to the extra_context variable which is then returned as part of the response, in this case it's a hard-coded value, but you can equally add any type of data like a model query or 3rd party API call to pass to the Django admin page. Because of this last workflow, the list view page of the Store model (i.e. the change_list.html template) can gain access to custom data to display as part of the page.
+
+The delete_view() method in listing 11-24 is triggered whenever you delete a Store model in the Django admin. In this case, the delete_view() method in listing 11-24 simply triggers the default action of deleting a record by calling the parent class's delete_view() method, but you can see how it's possible to execute custom logic (e.g. create an audit trail) whenever a delete action if performed on a Store model in the Django admin.
+
+As I've already mentioned, Django admin classes rely on over three dozen methods to implement their default behavior, all of which you can customize to fit your requirements. Given the amount of custom variations this amount of methods can generate, you can use the example in listing 11-24 as a guide and consult the footnote on the page for other methods you can customize in Django admin classes.
+
+http://grappelliproject.com/    ↑
+
+https://docs.djangoproject.com/en/1.11/ref/contrib/admin/#adminsite-methods    ↑

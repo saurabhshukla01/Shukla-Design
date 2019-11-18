@@ -1,0 +1,46 @@
+{% extends 'header.html' %}
+    {% block title %} Upadate Student {% endblock %}
+{% block CSS %}
+        body{
+        background-color:pink;
+        color:blue;
+        }
+        h2{
+        color:black;
+        }
+{% endblock %}
+{% block body %}
+<center><h2><u>Update Student Profile</u></h2></center>
+<form action="{{ id }}" method="POST">
+    {% csrf_token %}
+    <div>
+        <level>
+            Username : <br>
+            <input type="text" name="username" value={{username}}><br>
+        </level>
+        <level>
+            DOB : <br>
+            <input type="date" name="dob" value={{dob}}><br>
+        </level>
+        <level>
+            Email : <br>
+            <input type="email" name="email" value={{email}}><br>
+        </level>
+        <level>
+            Password : <br>
+            <input type="password" name="pwd" value={{password}}><br>
+        </level>
+        <level>
+            User Profile : <br>
+            <input type="file" name="profileImage"><br><br>
+        </level>
+        <level>
+            <input type="submit" value="Log In">
+            <input type="reset" value="reset">
+        </level>
+    </div>
+</form>
+
+{% block js %}
+{% endblock %}
+{% endblock %}

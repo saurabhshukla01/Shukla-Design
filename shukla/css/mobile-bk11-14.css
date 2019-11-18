@@ -1,0 +1,70 @@
+.modal-dialog {max-width: 100%;}
+    .modal-content {width:100%; background:transparent; border:none;}
+    .modal-body {width:100%;}
+    .close {
+    position: absolute;
+    right: -18px;
+    top: 30px;
+    background: #ff0000 !important;
+    padding: 0px 4px 5px 4px !important;
+    font-size: 1.3rem;} 
+    .Header {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    padding: 10px;
+    }
+    textarea{height: 240px;}
+    textarea:focus {border: 0px solid green !important;
+    box-shadow: 0 0 0px green !important;
+    -moz-box-shadow: 0 0 0px green !important;
+    -webkit-box-shadow: 0 0 0px green !important;
+    }
+
+    textarea:focus {
+    outline-offset: 0px !important;
+    outline: none !important;
+
+    }
+    .modal-body {position: absolute; top: 45px;}
+    .form-control{
+      border:0px;
+          }
+
+    .mobile-body {
+      background:url('../../shukla/images/phone.png') no-repeat; 
+      background-size: cover;
+      max-width:250px;
+      min-height: 500px;
+      border:none;
+      position: relative;
+      margin:0px auto;
+    }
+
+    .show-content{
+      display: block;
+      margin-left:10px;
+      margin-top: 30px;
+    }
+
+    form{
+      margin-top: 39px;
+      width: 100%;float: 
+      left;padding: 15px;
+    }
+
+    .editable-textarea{
+      width:300px;
+      height: 200px;
+      border:white 1px;
+      position: absolute; 
+      bottom :50% ;
+      left:0px;
+    }
+    .editable-textarea textarea{
+      height:100px;
+    }
+    .form-control::-webkit-scrollbar { width: 0 !important }
+    .form-control::-moz-scrollbar { width: 0 !important }
+    .form-control { overflow: -moz-scrollbars-none; overflow: -webkit-scrollbars-none; }
+    .form-control { -ms-overflow-style: none; -moz-overflow-style: none; -webkit-overflow-style: none; }

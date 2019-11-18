@@ -1,0 +1,24 @@
+{% extends "admin/base.html" %}
+<!--{% load static from staticfiles %} # This might be just {% load static %} in your ENV-->
+{% load static %}
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "css/admin-extra.css" %}" />{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><img src="{% static 'photos/university.jpg' %}" class="image" alt='image' style="width:100px;height:40px"/>
+    <a href="{% url 'admin:index' %}">
+            {{ _('University') }}</a>
+</h1>
+{% endblock %}
+
+{% block nav-global %}
+<nav>
+    <li><a href="../myapp/home">{{ _('Home') }}</a></li>
+    <li><a href="../myapp/about">{{ _('About') }}</a></li>
+    <li><a href="../myapp/profile">{{ _('Student') }}</a></li>
+    <li><a href="../myapp/addstudent">{{ _('Add Student') }}</a></li>
+    <li><a href="../myapp/showstudent">{{ _('Show Student') }}</a></li>
+    <li><img src="{% static 'photos/profile.jpg' %}" class="image" alt='image' /></li>
+</nav>
+{% endblock %}

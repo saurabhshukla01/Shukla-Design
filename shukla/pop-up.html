@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>Pop Up</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />-->
+    <link href="http://gogetscore.sheenz.in//assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700&display=swap" rel="stylesheet">
+    <!-- <script src="http://gogetscore.sheenz.in//assets/js/jquery-1.11.1.min.js"></script>-->
+    <style>
+      
+.accountbg {    background-image: url('http://bills.prudigital.net/img/bg-01.jpg');
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;}
+
+.overlay-bg {
+content: "";
+display: block;
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+background-color: rgba(51, 51, 51, 0.9);
+}
+
+    </style>
+    </head>
+
+<body>
+    <div class="accountbg"></div>
+    <div class="overlay-bg"></div>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 bg-white mt-5 p-5">
+                <div class="editable-textarea">
+                    <form>
+                        <div class="form-group">
+                          <label for="Text-Input">Input</label>
+                          <div class="form-group">
+                              <p><input type="text" placeholder="Type something..." class="form-control editfield"></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="Sms-Option">SMS Option</label>
+                          <select class="form-control" name="sweets" id="select">
+                              <option value="sms">SMS</option>
+                              <option value="mobile">Mobile</option>
+                              <option value="whatsapp">Whatsapp</option>
+                              <option value="message">Message</option>
+                              <option value="email">Email</option>
+                              <option value="telegram">Telegram</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <textarea class="form-control preview-type editfield1" rows="3" id="" placeholder="type here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                  </div>
+            </div>
+            <div class="col-md-8 bg-white mt-5 p-5">                  
+                  <form>
+                      <div class="form-group">
+                          <div class="previewfield"></div>
+                        </div>
+                    <span class="show-content"></span>
+                    <!--<h6 class="pt-3 m-2">Message</h6>-->
+                  <div class="form-group">
+                    <textarea class="form-control input1 border previewfield1" rows="10" id="" readonly=""></textarea>
+                  </div>
+                </form>
+                
+               
+
+            </div>
+        </div>
+    </div>
+
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<script>
+  $( "select" )
+    .change(function () {
+      var str = "";
+      $( "select option:selected" ).each(function() {
+        str += $( this ).text() + " ";
+      });
+      $( ".show-content" ).text( str );
+    })
+    .change();
+  </script>
+  
+
+<script>
+    $(document).ready(function(){
+        $(".editfield").on("input", function(){
+            // Print entered value in a div box
+            $(".previewfield").text($(this).val());
+        });
+        $(".editfield1").on("input", function(){
+            // Print entered value in a div box
+            $(".previewfield1").text($(this).val());
+        });
+    });
+    </script>
+  
+  
+</body>
+</html>

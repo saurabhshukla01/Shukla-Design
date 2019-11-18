@@ -1,0 +1,52 @@
+{% extends 'header.html' %}
+    {% block title %} Upadate Student {% endblock %}
+{% block CSS %}
+    body{
+        background-color:lightblue;
+        color:black;
+        }
+        h2{
+        color:blue;
+        }
+        table{
+        margin-left: 20px;
+        margin-top: 20px;
+        padding : 10px;
+        border:2px;
+        display:block;
+        color:black;
+        }
+        th{
+        margin-left:5px;
+        }
+        span{
+        margin-left:40px;
+        }
+{% endblock %}
+{% block body %}
+<center><h2><u>Show Student Profile</u></h2></center>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th><th>Username</th><th>Email</th><th>DOB</th><th colspan="2">Action</th>
+        </tr>
+    </thead>
+  {% for student in filter.qs %}
+    <tbody>
+        <tr>
+            <td>{{ student.id }}</td>
+            <td>{{ student.username }}</td>
+            <td> {{ student.email }} </td>
+            <td> {{ student.dob }} </td>
+            <!--<td><a href="updatestudent">Update</a></td>-->
+            <td><a href='updatestudent/{{ student.id }}' >Update</a></td>
+            <td><a href='deletestudent/{{ student.id }}'>Delete</a></td>
+        </tr>
+    </tbody>
+  {% endfor %}
+  </table>
+<span><a href="addstudent">Add Student</a></span>
+
+{% block js %}
+{% endblock %}
+{% endblock %}

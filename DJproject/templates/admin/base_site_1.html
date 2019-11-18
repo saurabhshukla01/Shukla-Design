@@ -1,0 +1,26 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block title %}{{ title }} | {{ _('NEW TITLE') }}{% endblock %}
+{% block extrastyle %}
+{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/admin-extra.css" %}" />
+<h1 id="site-name">
+    {{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/admin-extra.css" %}" />
+    <a href="{% url 'admin:index' %}">
+            {{ _('NEW TITLE') }}</a>
+</h1>
+{% endblock %}
+
+{% block branding %}
+    <!--<h1 id="site-name">-->
+
+<ul>
+  <li><a href="#">{{ _('Home') }}</a></li>
+  <li><a href="#">{{ _('Users') }}</a></li>
+  <li><a href="#">{{ _('Add Users') }}</a></li>
+  <li><a href="#">{{ _('Show Users') }}</a></li>
+</ul>
+
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

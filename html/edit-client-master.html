@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <base href="./">
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+      <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+      <meta name="author" content="Łukasz Holeczek">
+      <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+      <title>Edit Client Master</title>
+      <!-- Icons-->
+      <link rel="icon" type="image/ico" href="./img/pru_logo1.png" sizes="any" />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="css/style.css" rel="stylesheet">
+   </head>
+   <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+      <header class="app-header navbar">
+         <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <a class="navbar-brand" href="#">
+         <img class="navbar-brand-full" src="img/brand/pru_logo.gif" width="110" height="52" alt="CoreUI Logo">
+         <img class="navbar-brand-minimized" src="img/brand/pru_logo1.png" width="47" height="44" alt="CoreUI Logo">
+         </a>
+         <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <ul class="nav navbar-nav d-md-down-none">
+            <li class="nav-item px-3">
+               <a class="nav-link" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item px-3">
+               <a class="nav-link" href="#">Users</a>
+            </li>
+            <li class="nav-item px-3">
+               <a class="nav-link" href="#">Settings</a>
+            </li>
+         </ul>
+         <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+               <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+               <img class="img-avatar" src="img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
+               </a>
+               <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="#">
+                  <i class="fa fa-shield"></i> Profile Name</a>
+                  <a class="dropdown-item" href="#">
+                  <i class="fa fa-lock"></i> Logout</a>
+               </div>
+            </li>
+         </ul>
+      </header>
+      <div class="app-body">
+         <div class="sidebar">
+            <nav class="sidebar-nav">
+               <ul class="nav">
+                  <li class="nav-item">
+                     <a class="nav-link" href="index.html">
+                     <i class="fa fa-tachometer nav-icon" aria-hidden="true"></i> Dashboard
+                     </a>
+                  </li>
+                  <li class="nav-item nav-dropdown">
+                     <a class="nav-link nav-dropdown-toggle" href="#">
+                     <i class="fa fa-bar-chart nav-icon" aria-hidden="true"></i> Sale</a>
+                     <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                           <a class="nav-link" href="">
+                           <i class="fa fa-file-text-o nav-icon" aria-hidden="true"></i> Invoice List</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="">
+                           <i class="fa fa-plus-square nav-icon" aria-hidden="true"></i> Create Invoice</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="">
+                           <i class="fa fa-search nav-icon" aria-hidden="true"></i>  Find Sale Invoice</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="">
+                           <i class="fa fa-bell-o nav-icon" aria-hidden="true"></i> Payment Reminder</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="nav-item nav-dropdown">
+                     <a class="nav-link nav-dropdown-toggle" href="#">
+                     <i class="fa fa-credit-card nav-icon" aria-hidden="true"></i> Purchase</a>
+                     <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                           <a class="nav-link" href="">
+                           <i class="fa fa-list nav-icon" aria-hidden="true"></i> Purchase List</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="">
+                           <i class="fa fa-plus-circle nav-icon" aria-hidden="true"></i> Create Invoice</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="">
+                           <i class="fa fa-file-text-o nav-icon" aria-hidden="true"></i> Find Purchase Invoice</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="nav-item nav-dropdown">
+                     <a class="nav-link nav-dropdown-toggle" href="#">
+                     <i class="fa fa-ellipsis-v nav-icon" aria-hidden="true"></i> Other Link</a>
+                     <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                           <a class="nav-link" href="">
+                           <i class="fa fa-inr nav-icon" aria-hidden="true"></i> GST</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="divider"></li>
+               </ul>
+            </nav>
+            <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+         </div>
+         <main class="main">
+            <div class="container-fluid">
+               <div class="animated fadeIn">
+                  <div class="card mt-4">
+                     <div class="card-body">
+                        <h4>Edit Client Master</h4>
+                        <form action="" method="post" novalidate="novalidate" class="border border-light p-2 mt-3">
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label class="control-label col-md-12" for="ClientName">ClientName</label>
+                                    <div class="col-md-12">
+                                       <input class="form-control text-box single-line valid" id="ClientName" name="ClientName" type="text" value="Intellect" aria-invalid="false">
+                                       <span class="field-validation-valid text-danger" data-valmsg-for="ClientName" data-valmsg-replace="true"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label class="control-label col-md-12" for="CompanyName">CompanyName</label>
+                                    <div class="col-md-12">
+                                       <input class="form-control text-box single-line" id="CompanyName" name="CompanyName" type="text" value="Intellect Ads">
+                                       <span class="field-validation-valid text-danger" data-valmsg-for="CompanyName" data-valmsg-replace="true"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label class="control-label col-md-12" for="BrandName">BrandName</label>
+                                    <div class="col-md-12">
+                                       <input class="form-control text-box single-line" id="BrandName" name="BrandName" type="text" value="Intellect">
+                                       <span class="field-validation-valid text-danger" data-valmsg-for="BrandName" data-valmsg-replace="true"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label class="control-label col-md-12" for="CompanyType">CompanyType</label>
+                                    <div class="col-md-12">
+                                       <input class="form-control text-box single-line" id="CompanyType" name="CompanyType" type="text" value="Digital Marketing">
+                                       <span class="field-validation-valid text-danger" data-valmsg-for="CompanyType" data-valmsg-replace="true"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label class="control-label col-md-12" for="CompanyId">CompanyId</label>
+                                    <div class="col-md-12">
+                                       <input class="form-control text-box single-line" id="CompanyId" name="CompanyId" type="text" value="1233">
+                                       <span class="field-validation-valid text-danger" data-valmsg-for="CompanyId" data-valmsg-replace="true"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label class="control-label col-md-12" for="GSTNumber">GSTNumber</label>
+                                    <div class="col-md-12">
+                                       <input class="form-control text-box single-line" id="GSTNumber" name="GSTNumber" type="text" value="asadsffd213">
+                                       <span class="field-validation-valid text-danger" data-valmsg-for="GSTNumber" data-valmsg-replace="true"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label class="control-label col-md-12" for="CompanyMobile">CompanyMobile</label>
+                                    <div class="col-md-12">
+                                       <input class="form-control text-box single-line" id="CompanyMobile" name="CompanyMobile" type="text" value="8860846433">
+                                       <span class="field-validation-valid text-danger" data-valmsg-for="CompanyMobile" data-valmsg-replace="true"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label class="control-label col-md-12" for="City">City</label>
+                                    <div class="col-md-12">
+                                       <input class="form-control text-box single-line" id="City" name="City" type="text" value="Noida">
+                                       <span class="field-validation-valid text-danger" data-valmsg-for="City" data-valmsg-replace="true"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label class="control-label col-md-12" for="State">State</label>
+                                    <div class="col-md-12">
+                                       <input class="form-control text-box single-line" id="State" name="State" type="text" value="UP">
+                                       <span class="field-validation-valid text-danger" data-valmsg-for="State" data-valmsg-replace="true"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label class="control-label col-md-12" for="Pincode">Pincode</label>
+                                    <div class="col-md-12">
+                                       <input class="form-control text-box single-line" id="Pincode" name="Pincode" type="text" value="201209">
+                                       <span class="field-validation-valid text-danger" data-valmsg-for="Pincode" data-valmsg-replace="true"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label class="control-label col-md-12" for="Email">Email</label>
+                                    <div class="col-md-12">
+                                       <input class="form-control text-box single-line" id="Email" name="Email" type="text" value="rajdeep@prudigital.in">
+                                       <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label class="control-label col-md-12" for="WebsuiteUrl">WebsuiteUrl</label>
+                                    <div class="col-md-12">
+                                       <input class="form-control text-box single-line" id="WebsuiteUrl" name="WebsuiteUrl" type="text" value="http://www.intellectads.co.in/publisher/home.asp">
+                                       <span class="field-validation-valid text-danger" data-valmsg-for="WebsuiteUrl" data-valmsg-replace="true"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label class="control-label col-md-12" for="PanelUsername">PanelUsername</label>
+                                    <div class="col-md-12">
+                                       <input class="form-control text-box single-line" id="PanelUsername" name="PanelUsername" type="text" value="intellect">
+                                       <span class="field-validation-valid text-danger" data-valmsg-for="PanelUsername" data-valmsg-replace="true"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label class="control-label col-md-12" for="PanelPassword">PanelPassword</label>
+                                    <div class="col-md-12">
+                                       <input class="form-control text-box single-line" id="PanelPassword" name="PanelPassword" type="text" value="intellect">
+                                       <span class="field-validation-valid text-danger" data-valmsg-for="PanelPassword" data-valmsg-replace="true"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label class="control-label col-md-12" for="Active">Active</label>
+                                    <div class="col-md-12">
+                                       <div class="checkbox">
+                                          <select class="list-box tri-state" id="Active" name="Active">
+                                             <option value="">Not Set</option>
+                                             <option selected="selected" value="true">True</option>
+                                             <option value="false">False</option>
+                                          </select>
+                                          <span class="field-validation-valid text-danger" data-valmsg-for="Active" data-valmsg-replace="true"></span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="form-group submit-box">
+                              <div class="col-md-12">
+                                 <div class="btn btn-warning">
+                                    <a href="" class="text-white">Back to List</a>
+                                 </div>
+                                 <input type="submit" value="Save" class="btn btn-primary submit-btn col-md-1">
+                              </div>
+                           </div>
+                     </form>
+                     <!-- /.row-->
+                  </div>
+               </div>
+               <!-- /.card-->
+               <!-- /.row-->
+            </div>
+      </div>
+      </main>
+      </div>
+      <footer class="app-footer">
+         <div>Copyright © 2019
+            <a href=""> Prudigital.</a></span>
+         </div>
+         <div class="ml-auto">
+            <span>Powered by</span>
+            <a href="#">Pru Digital</a>
+         </div>
+      </footer>
+      <!-- CoreUI and necessary plugins-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/pace.min.js"></script>
+      <script src="js/perfect-scrollbar.min.js"></script>
+      <script src="js/coreui.min.js"></script>
+      <!-- Plugins and scripts required by this view-->
+      <script src="js/Chart.min.js"></script>
+      <script src="js/charts.js"></script>
+      <script src="js/custom-tooltips.min.js"></script>
+      <script src="js/main.js"></script>
+      <script>
+         $('#ui-view').ajaxLoad();
+         $(document).ajaxComplete(function() {
+           Pace.restart()
+         });
+      </script>
+   </body>
+</html>

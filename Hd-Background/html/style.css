@@ -1,0 +1,145 @@
+/* main-style.css  */
+
+.hoverTable tr:hover {
+    background-color: #D6D6D6;
+    }
+
+.pop-loader {
+
+    display:block;
+
+    position:fixed;
+
+    top:15%;
+
+    left:30%;
+
+    right:25%;
+
+    color: #fff;
+
+    padding: 30px;
+
+} 
+
+.greens {
+
+	color: #060;
+
+}
+
+.redc {
+
+	color: #F00;
+
+}
+
+.nav-tabs li{
+
+ background-color: #EBEBEB;
+
+}
+
+a:link {
+
+
+
+	color: #000;
+
+
+
+	text-decoration: none;
+
+
+
+}
+
+
+
+a:visited {
+
+
+
+	text-decoration: none;
+
+
+
+	color: #000;
+
+
+
+}
+
+
+
+a:hover {
+
+
+
+	text-decoration: none;
+
+
+
+	color: #060;
+
+
+
+}
+
+
+
+
+
+.index-report ul li{
+
+    /* float: right; */
+
+    padding: 0;
+
+    margin: 0 0 0 5px !important;
+
+}
+
+.index-report{
+
+            max-width:555px;
+
+            max-height:540px;
+
+            margin-top:7%;
+
+            left:28%;
+
+            background-color: #fdfafa;
+
+            font-size: 14px;
+
+        }
+
+
+
+div.box {
+
+    height: 100%;
+
+    width:550px;
+
+    background-color: #FFF;
+
+    border: 1px solid #7F9DB9;
+
+    overflow: auto;
+
+    overflow-x: hidden;
+
+    overflow-y: scroll;
+
+    margin-top: 1px;
+
+    margin-bottom: 1px;
+
+    padding: 0px;
+
+    margin: 0px;
+
+}  

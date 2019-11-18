@@ -1,0 +1,180 @@
+1)  backend.py (create in app )
+===============================
+
+
+from django.conf import settings
+from django.contrib.auth.models import User
+from django import forms
+
+def my_portal_authenticate(username, password):
+    if username == 'fooDjango'
+        and password == 'barDjango':
+            return True
+    return False
+
+class MyPortalBackend(object):
+    def authenticate(self, **kwargs):
+        '''
+        kwargs will receive the python dict that may contain 
+        username & password to authenticate which will be 
+        received from the Custom admin site.
+        '''
+        try:
+            username = kwargs['username']
+            password = kwgars['password']
+            
+            if not my_portal_authenticate(username, password):
+                raise forms.ValidationError(
+                    _("Username / Password Mismatch")
+                )
+        
+            '''
+            Check if the user exist in the django_auth_user 
+            table, if not then UserNotExist exception will  
+            be raised automatically and user will be added 
+            (with or without password) in the exception 
+            handling block
+            '''
+            
+            #Check if the user exist in the database, if it exist in the 
+            #database, auth_user will not be updated and exception will not be raised
+            user = User.objects.get(username = username)
+            
+        except KeyError, e:
+            raise forms.ValidationError(
+                _("Programming Error")
+            )
+
+        except User.DoesNotExist:
+            '''
+            Add the username to the django_auth_users so 
+            that login session can keep track of it. 
+            Django Admin is heavily coupled with the 
+            Django User model for the user instane in the 
+            django_auth_users table. The request object then 
+            map the request.user feild to this object of the
+            data model.
+            '''
+            user = User(username=username)
+            #defining the user of access group of that particular user
+            user.is_staff= True
+            user.is_superuser = True
+            suer.save()
+
+        return user
+    
+    def get_user(self, user_id):
+        try:
+            return User.objects.get(pk=user_id)
+        except User.DoesNotExist:
+            #Djano Admin treats None user as anonymous your who have no right at all.
+            return None
+
+
+
+
+
+===================================================================================================================================
+
+login.py -
+=========
+
+
+from django.contrib.auth.forms import AuthenticationForm
+from django.forms import ValidationError
+
+class CustomLoginForm(AuthenticationForm):
+
+    #overriding clean method to change default authentication behaviour
+    def clean(self):
+        userid = self.cleaned_data.get('username')
+        password = self.cleaned_data.get('password')
+        
+        if userid and password:
+            #the backends will be picked from the settings from the variable named AUTHENTICATION_BACKENDS
+            #and the authentication method of each of one will be called in the same order as the order in the AUTHENTICATION_BACKENDS list
+            self.user_cache = authenticate(
+                userid=userid, 
+                password=password
+            )
+
+            if self.user_cache is None:
+                raise forms.ValidationError(
+                    self.error_messages['invalid_login'],
+                    code='invalid_login',
+                    params={'username': self.username_field.verbose_name},
+                )
+            else:
+                self.confirm_login_allowed(self.user_cache)
+
+
+
+==================================================================================================================================
+
+
+
+Change admin login form ==>    app/login.py
+
+
+
+from django.contrib.admin import AdminSite
+from .login import CustomLoginForm
+from django.utils.translation import ugettext_lazy as _
+from .models import MyModel
+
+Class CustomLoginAdminSite(AdminSite):
+    site_title = _('My site admin')
+    site_header = _('Administration')
+    index_title = _('CustomLogin')
+    #registering Custom login form for the Login interface
+    #this login form uses CustomBackend
+    login_form = CustomLoginForm
+
+#create a Admin_site object to register models
+admin_site = CustomLoginAdminSite()
+
+#register Models as usual
+admin_site.register(MyModel)
+
+
+
+
+==================================================================================================================================
+
+
+project/ urls.py  ==>
+
+
+from app.admin import admin_site
+
+urlpatterns = [
+    url(r'^app/',include('app.urls',namespace="app"),name='app_access'),
+    #informing the django about the new admin site
+    # TADA thats done !! whhoh
+    url(r'^admin/', include(admin_site.urls)),
+]
+
+
+
+================================================================================================================================
+
+
+project/setting.py  ==>
+
+
+
+
+#Rest of Settings.py
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'app.backends.MyPortalBackend',
+]
+
+
+
+========================================================================================================================== 
+
+
+        
+        return self.cleaned_data
